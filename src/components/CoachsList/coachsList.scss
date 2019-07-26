@@ -1,0 +1,11 @@
+.coachs-list{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F3F3F3;
+  
+  &__coach-card{
+    border:black solid 2px;
+    margin: 3em 4em;
+  }
+}
