@@ -7,5 +7,12 @@
   &__coach-card{
     border:black solid 2px;
     margin: 3em 4em;
+    display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: space-between
+    
   }
 }

@@ -14,6 +14,7 @@ class Reviews extends React.Component {
   render() {
     return (
       <div className="reviews">
+        <h2>Ils se sont lancés ! </h2>
         <ul className="reviews-list">
           <Card className="reviews-list__card">
             <Card.Header className="reviews-list__card__header">Quote</Card.Header>

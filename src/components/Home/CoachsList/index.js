@@ -17,7 +17,7 @@ class CoachsList extends React.Component {
         <Card className="coachs-list__coach-card" style={{ width: '18rem' }}>
           <Figure className="coach-card__figure">
             <Figure.Image
-              className="coach-card__figure__image"
+              className="coach-card--image"
               width={171}
               height={180}
               alt="171x180"

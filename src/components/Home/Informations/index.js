@@ -13,19 +13,19 @@ const Informations = () => (
     <ul className="informations__list">
       <div className="informations__list-item">
         <div className="informations__list-item__step">1</div>
-        <h3 className="informations__list-item__title">Choisis ton jeu</h3>
+        <h4 className="informations__list-item__title">Choisis ton jeu</h4>
       </div>
       <div className="informations__list-item">
         <div className="informations__list-item__step">2</div>
-        <h3 className="informations__list-item__title">Selectionne ton coach</h3>
+        <h4 className="informations__list-item__title">Selectionne ton coach</h4>
       </div>
       <div className="informations__list-item">
         <div className="informations__list-item__step">3</div>
-        <h3 className="informations__list-item__title">Amuse toi en apprenant</h3>
+        <h4 className="informations__list-item__title">Amuse toi en apprenant</h4>
       </div>
       <div className="informations__list-item">
         <div className="informations__list-item__step">4</div>
-        <h3 className="informations__list-item__title">Debrief avec ton coach</h3>
+        <h4 className="informations__list-item__title">Debrief avec ton coach</h4>
       </div>
     </ul>
     <div className="informations__button">

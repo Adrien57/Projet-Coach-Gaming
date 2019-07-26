@@ -5,10 +5,10 @@ import PropTypes from 'prop-types';
 
 // == Import : local
 import './home.scss';
-import GamesList from 'src/components/GamesList';
-import CoachsList from 'src/components/CoachsList';
-import Reviews from 'src/components/Reviews';
-import Informations from '../Informations';
+import GamesList from 'src/components/Home/GamesList';
+import CoachsList from 'src/components/Home/CoachsList';
+import Reviews from 'src/components/Home/Reviews';
+import Informations from 'src/components/Home/Informations';
 
 class Home extends React.Component {
   componentDidMount() {
