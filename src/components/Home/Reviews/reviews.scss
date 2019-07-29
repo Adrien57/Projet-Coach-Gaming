@@ -1,0 +1,21 @@
+.reviews{
+  background-color: grey;
+  &-list{
+  height: 30vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  &__card{
+    width: 25%;
+  }
+  
+}
+&-link{
+    text-align: center;
+    padding-bottom: 1.4em;
+    &__a{
+      font-size: 1.3em;
+    }
+  }
+}
+
