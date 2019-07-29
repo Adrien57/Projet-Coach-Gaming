@@ -6,6 +6,7 @@ import { Container } from 'react-bootstrap';
 import './app.scss';
 import NavGaming from 'src/components/NavGaming';
 import CoachDetail from 'src/components/CoachDetail';
+import FormCoach from 'src/components/FormCoach';
 import CoachFooter from 'src/components/Footer';
 
 // == Composant
@@ -21,7 +22,8 @@ class App extends React.Component {
       <div id="app">
         <Container>
           <NavGaming />
-          <CoachDetail />
+          {/* <CoachDetail /> */}
+          <FormCoach />
         </Container>
         <CoachFooter />
       </div>

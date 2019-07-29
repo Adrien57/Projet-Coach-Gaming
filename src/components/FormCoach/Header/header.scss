@@ -1,0 +1,17 @@
+.img:after{
+  content:"";
+  display:block;
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background:rgba(0,0,0,0.6);
+}
+.card-img{
+  height: 200px;
+  width: 100%;
+}
+.card-title{
+  text-align: center;
+}

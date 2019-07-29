@@ -34,4 +34,4 @@ class NavGaming extends React.Component {
   }
 }
 
-export default NavGaming; 
+export default NavGaming;
