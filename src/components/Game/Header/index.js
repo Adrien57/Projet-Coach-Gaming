@@ -1,6 +1,7 @@
 // Imports NPM
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Card } from 'react-bootstrap';
 
 // Imports locaux
 import './header.scss';
@@ -19,22 +20,30 @@ const Header = (props) => {
   const {
     name,
     description,
+    headerBg,
   } = props;
   return (
     <div className="gamesList">
+      <header
+        className="gameList-header"
+        style={{
+          backgroundImage: `url(${headerBg})`,
+        }}
+      >
         <h1 className="gamesList__title">{name}</h1>
         <p className="gamesList__description">
           {description}
         </p>
-        <nav className="gamesList__nav">
-          <ul className="gamesList__nav__ul">
+      </header>
+              <nav className="gamesList__nav">
+                  <ul className="gamesList__nav__ul">
             <li><a className="gamesList__nav__ul--link" href="#">Fifa</a></li>
             <li><a className="gamesList__nav__ul--link" href="#">Overwatch</a></li>
             <li><a className="gamesList__nav__ul--link" href="#">Pubg</a></li>
             <li><a className="gamesList__nav__ul--link" href="#">Smash Ultimate</a></li>
           </ul>
         </nav>
-      </div> 
+      </div>
   );
 };
 
@@ -44,6 +53,7 @@ const Header = (props) => {
 Header.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  headerBg: PropTypes.string.isRequired,
 };
 
 // Export

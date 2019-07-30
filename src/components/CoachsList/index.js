@@ -34,7 +34,7 @@ class CoachsList extends React.Component {
                 Some quick example text to build on the card title and make up the bulk of
                 the card's content.
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Button variant="primary">Profil</Button>
           </Card.Body>
         </Card>
         <Card className="coachs-list__coach-card" style={{ width: '18rem' }}>
@@ -57,7 +57,7 @@ class CoachsList extends React.Component {
                 Some quick example text to build on the card title and make up the bulk of
                 the card's content.
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Button variant="primary">Profil</Button>
           </Card.Body>
         </Card>
         <Card className="coachs-list__coach-card" style={{ width: '18rem' }}>
@@ -80,7 +80,7 @@ class CoachsList extends React.Component {
                 Some quick example text to build on the card title and make up the bulk of
                 the card's content.
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Button variant="primary">Profil</Button>
           </Card.Body>
         </Card>
       </ul>

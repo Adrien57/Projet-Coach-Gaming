@@ -11,10 +11,10 @@ const NavGaming = ({ categories, games }) => (
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="mr-auto">
-        {categories.map(({ route, label, games }) => {
-          if ( label === 'Jeux') {
+        {categories.map(({ route, label }) => {
+          if (label === 'Jeux') {
             return (
-              <NavDropdown title="Jeux" id="basic-nav-dropdown">
+              <NavDropdown key={label} title="Jeux" id="basic-nav-dropdown">
                 {games.map(({ name, slug }) => {
                   return (
                     <NavLink
@@ -51,15 +51,14 @@ NavGaming.propTypes = {
     PropTypes.shape({
       label: PropTypes.string.isRequired,
       route: PropTypes.string.isRequired,
-      games: PropTypes.arrayOf(
-        PropTypes.shape({
-          name: PropTypes.string.isRequired,
-          slug: PropTypes.string.isRequired,
-        }),
-      ).isRequired,
     }),
   ).isRequired,
-  games: PropTypes.arrayOf().isRequired,
+  games: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      slug: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
 };
 
 export default NavGaming;

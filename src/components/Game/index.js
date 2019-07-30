@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 // == Import : local
 import Header from 'src/components/Game/Header';
-import GamesList from 'src/components/GamesList';
 import CoachsList from 'src/components/CoachsList';
 
 import './game.scss';
