@@ -2,12 +2,13 @@
 const initialState = {
   games: [
     {
-        "name": "FIFA ",
+        "name": "FIFA",
         "description": "Provident facere excepturi sed officiis. Velit mollitia ut voluptatem repellat. Debitis ex quia sunt beatae nihil doloremque a. Placeat est enim fuga reprehenderit. Omnis aut corrupti adipisci quia est ipsam.",
-        "header_background": "https://blog.francetvinfo.fr/popup/files/2018/10/FUT19-Hero-Tertiary-FUTLogo-xs-600x338.jpg",
+        "header_background": "http://www.chauveau.net/maiores-quia-eligendi-quo.html",
         "slug": "fifa",
         "info_coaches": [
             {
+                "price": 60,
                 "rating": 5,
                 "user": {
                     "username": "mguillet",
@@ -15,8 +16,9 @@ const initialState = {
                     "slug": "mguillet"
                 },
                 "team": {
+                    "name": "Team4",
                     "logo": "https://lorempixel.com/50/50/?82191",
-                    "logo_description": "Eaque quisquam.",
+                    "logo_description": "Eaque quisquam."
                 }
             }
         ]
@@ -24,10 +26,11 @@ const initialState = {
     {
         "name": "Overwatch",
         "description": "Modi aut et omnis est occaecati numquam deleniti odio. Omnis sit pariatur qui ut. Fuga ut iste unde ut consectetur.",
-        "header_background": "https://blznav.akamaized.net/img/games/cards/card-overwatch-7eff92e1257149aa.jpg",
+        "header_background": "http://www.allain.org/doloremque-qui-fugiat-ut-et-iste-doloremque",
         "slug": "overwatch",
         "info_coaches": [
             {
+                "price": 69,
                 "rating": 5,
                 "user": {
                     "username": "emile70",
@@ -35,11 +38,13 @@ const initialState = {
                     "slug": "emile70"
                 },
                 "team": {
+                    "name": "Vitality",
                     "logo": "https://lorempixel.com/50/50/?40210",
                     "logo_description": "Qui quo amet."
                 }
             },
             {
+                "price": 57,
                 "rating": 5,
                 "user": {
                     "username": "lecoq.stephane",
@@ -47,11 +52,13 @@ const initialState = {
                     "slug": "lecoq-stephane"
                 },
                 "team": {
+                    "name": "Vitality",
                     "logo": "https://lorempixel.com/50/50/?40210",
                     "logo_description": "Qui quo amet."
                 }
             },
             {
+                "price": 53,
                 "rating": 4,
                 "user": {
                     "username": "jboulanger",
@@ -59,11 +66,13 @@ const initialState = {
                     "slug": "jboulanger"
                 },
                 "team": {
+                    "name": "Team3",
                     "logo": "https://lorempixel.com/50/50/?33951",
                     "logo_description": "Sit dicta itaque aspernatur quo."
                 }
             },
             {
+                "price": 0,
                 "rating": 3,
                 "user": {
                     "username": "dominique63",
@@ -71,11 +80,13 @@ const initialState = {
                     "slug": "dominique63"
                 },
                 "team": {
+                    "name": "Team3",
                     "logo": "https://lorempixel.com/50/50/?33951",
                     "logo_description": "Sit dicta itaque aspernatur quo."
                 }
             },
             {
+                "price": 10,
                 "rating": 2,
                 "user": {
                     "username": "lejeune.gregoire",
@@ -83,11 +94,13 @@ const initialState = {
                     "slug": "lejeune-gregoire"
                 },
                 "team": {
+                    "name": "Team3",
                     "logo": "https://lorempixel.com/50/50/?33951",
                     "logo_description": "Sit dicta itaque aspernatur quo."
                 }
             },
             {
+                "price": 80,
                 "rating": 0,
                 "user": {
                     "username": "pereira.isaac",
@@ -95,11 +108,13 @@ const initialState = {
                     "slug": "pereira-isaac"
                 },
                 "team": {
+                    "name": "Team4",
                     "logo": "https://lorempixel.com/50/50/?82191",
                     "logo_description": "Eaque quisquam."
                 }
             },
             {
+                "price": 73,
                 "rating": 0,
                 "user": {
                     "username": "valerie.gallet",
@@ -107,6 +122,7 @@ const initialState = {
                     "slug": "valerie-gallet"
                 },
                 "team": {
+                    "name": "Vitality",
                     "logo": "https://lorempixel.com/50/50/?40210",
                     "logo_description": "Qui quo amet."
                 }
@@ -116,10 +132,11 @@ const initialState = {
     {
         "name": "PUBG",
         "description": "Consequatur omnis recusandae autem et sed ratione quisquam alias. Nam reiciendis ducimus quis ut ipsa quia. Omnis error et perspiciatis omnis nam.",
-        "header_background": "https://www.extremetech.com/wp-content/uploads/2017/12/PUBG-Feature-640x353.jpg",
+        "header_background": "http://www.leblanc.fr/voluptatem-tempora-dignissimos-modi-fugit-molestiae",
         "slug": "pubg",
         "info_coaches": [
             {
+                "price": 23,
                 "rating": 5,
                 "user": {
                     "username": "dperrier",
@@ -127,11 +144,13 @@ const initialState = {
                     "slug": "dperrier"
                 },
                 "team": {
+                    "name": "Vitality",
                     "logo": "https://lorempixel.com/50/50/?40210",
                     "logo_description": "Qui quo amet."
                 }
             },
             {
+                "price": 7,
                 "rating": 3,
                 "user": {
                     "username": "renee88",
@@ -139,11 +158,13 @@ const initialState = {
                     "slug": "renee88"
                 },
                 "team": {
+                    "name": "Team2",
                     "logo": "https://lorempixel.com/50/50/?16197",
                     "logo_description": "Veniam ratione deserunt laudantium."
                 }
             },
             {
+                "price": 81,
                 "rating": 2,
                 "user": {
                     "username": "olivier08",
@@ -151,11 +172,13 @@ const initialState = {
                     "slug": "olivier08"
                 },
                 "team": {
+                    "name": "Team2",
                     "logo": "https://lorempixel.com/50/50/?16197",
                     "logo_description": "Veniam ratione deserunt laudantium."
                 }
             },
             {
+                "price": 35,
                 "rating": 1,
                 "user": {
                     "username": "pinto.eugene",
@@ -163,11 +186,13 @@ const initialState = {
                     "slug": "pinto-eugene"
                 },
                 "team": {
+                    "name": "Team4",
                     "logo": "https://lorempixel.com/50/50/?82191",
                     "logo_description": "Eaque quisquam."
                 }
             },
             {
+                "price": 30,
                 "rating": 1,
                 "user": {
                     "username": "unavarro",
@@ -175,6 +200,7 @@ const initialState = {
                     "slug": "unavarro"
                 },
                 "team": {
+                    "name": "Vitality",
                     "logo": "https://lorempixel.com/50/50/?40210",
                     "logo_description": "Qui quo amet."
                 }
@@ -184,10 +210,11 @@ const initialState = {
     {
         "name": "Super Smash Bros Ultimate",
         "description": "Sunt dolorum totam ea id et blanditiis. Illo beatae molestias impedit dolor dolorem ut nisi. Ab dolor est et voluptas harum quis. Odit similique veritatis ut voluptas fugiat ut fugiat. Nemo magnam animi suscipit voluptas aut est.",
-        "header_background": "https://static1.millenium.org/articles/2/33/87/12/@/1074321-nintendo-switch-super-smash-bros-ultimate-dlc-characters-leaked-surprising-nintendo-direct-amp_article_media-1.jpg",
+        "header_background": "http://www.dias.com/ducimus-expedita-accusantium-voluptatem-dolorum-quia.html",
         "slug": "super-smash-bros-ultimate",
         "info_coaches": [
             {
+                "price": 89,
                 "rating": 4,
                 "user": {
                     "username": "ebigot",
@@ -195,11 +222,13 @@ const initialState = {
                     "slug": "ebigot"
                 },
                 "team": {
+                    "name": "Team4",
                     "logo": "https://lorempixel.com/50/50/?82191",
                     "logo_description": "Eaque quisquam."
                 }
             },
             {
+                "price": 10,
                 "rating": 4,
                 "user": {
                     "username": "hortense70",
@@ -207,11 +236,13 @@ const initialState = {
                     "slug": "hortense70"
                 },
                 "team": {
+                    "name": "Team2",
                     "logo": "https://lorempixel.com/50/50/?16197",
                     "logo_description": "Veniam ratione deserunt laudantium."
                 }
             },
             {
+                "price": 68,
                 "rating": 4,
                 "user": {
                     "username": "maryse.lebrun",
@@ -219,11 +250,13 @@ const initialState = {
                     "slug": "maryse-lebrun"
                 },
                 "team": {
+                    "name": "Team2",
                     "logo": "https://lorempixel.com/50/50/?16197",
                     "logo_description": "Veniam ratione deserunt laudantium."
                 }
             },
             {
+                "price": 0,
                 "rating": 3,
                 "user": {
                     "username": "poulain.penelope",
@@ -231,11 +264,13 @@ const initialState = {
                     "slug": "poulain-penelope"
                 },
                 "team": {
+                    "name": "Team4",
                     "logo": "https://lorempixel.com/50/50/?82191",
                     "logo_description": "Eaque quisquam."
                 }
             },
             {
+                "price": 68,
                 "rating": 3,
                 "user": {
                     "username": "marine.didier",
@@ -243,11 +278,13 @@ const initialState = {
                     "slug": "marine-didier"
                 },
                 "team": {
+                    "name": "Team3",
                     "logo": "https://lorempixel.com/50/50/?33951",
                     "logo_description": "Sit dicta itaque aspernatur quo."
                 }
             },
             {
+                "price": 97,
                 "rating": 3,
                 "user": {
                     "username": "dupuy.danielle",
@@ -255,11 +292,13 @@ const initialState = {
                     "slug": "dupuy-danielle"
                 },
                 "team": {
+                    "name": "Vitality",
                     "logo": "https://lorempixel.com/50/50/?40210",
                     "logo_description": "Qui quo amet."
                 }
             },
             {
+                "price": 100,
                 "rating": 3,
                 "user": {
                     "username": "alix.maurice",
@@ -267,13 +306,72 @@ const initialState = {
                     "slug": "alix-maurice"
                 },
                 "team": {
+                    "name": "Team4",
                     "logo": "https://lorempixel.com/50/50/?82191",
                     "logo_description": "Eaque quisquam."
                 }
             }
         ]
     }
-  ]
+],
+coachDetail: {
+    "price": 10,
+    "description": "Modi ut vel qui deserunt provident deserunt ut. Nihil quia magnam dolore vel velit consequatur accusantium. Error cupiditate minima voluptate quod. Facere quos laudantium blanditiis excepturi ducimus quia. Sunt qui id dolores rerum repellendus qui consequuntur.",
+    "rating": 3,
+    "youtube": "http://bernier.com/neque-temporibus-iusto-deleniti-temporibus-minima-minima-et.html",
+    "facebook": "In dicta similique repellat omnis occaecati maiores. Similique aut et mollitia quia. Modi ut ab eius accusantium corrupti ducimus ducimus. Alias quod accusamus quasi dicta dolor magni.",
+    "insta": "http://www.martins.fr/consequatur-labore-dolorem-qui-deserunt-exercitationem-nisi-architecto",
+    "twitch": "http://pons.fr/cumque-deserunt-culpa-qui-optio.html",
+    "user": {
+        "username": "emmanuel81",
+        "avatar": "Sunt et qui exercitationem iusto accusamus. Harum rerum tempore vel. Porro earum nihil architecto quam porro consequatur sequi. Omnis voluptatibus reiciendis nostrum optio animi et cumque.",
+        "records": [
+            {
+                "description": "Championne de freestyle de marathon en apnée",
+                "logo": {
+                    "url": "http://gay.fr/",
+                    "logo_description": "Voluptas rerum ut."
+                }
+            },
+            {
+                "description": "Miss \"fait des super tarte aux pommes \" 2015",
+                "logo": {
+                    "url": "http://www.lucas.fr/eum-nostrum-non-assumenda-cupiditate-alias-sit.html",
+                    "logo_description": "Molestiae incidunt."
+                }
+            }
+        ]
+    },
+    "team": {
+        "name": "Team3",
+        "logo": "https://lorempixel.com/50/50/?12881"
+    },
+    "game": {
+        "name": "Overwatch"
+    },
+    "reviews": [
+        {
+            "rating": 4,
+            "comment": "Eveniet illo maxime iusto ad expedita. Eos rerum laudantium possimus laboriosam non error. Quos voluptas quae officia. Rerum esse sed nobis qui.",
+            "created_at": "2019-07-31T11:01:14+02:00",
+            "user": {
+                "username": "dupuy.georges",
+                "avatar": "Molestiae labore est cumque aperiam repellat. Iste distinctio rerum pariatur architecto ad sit. Est architecto voluptate eum inventore.",
+                "records": []
+            }
+        },
+        {
+            "rating": 5,
+            "comment": "coach au top",
+            "created_at": "2019-07-31T11:14:02+02:00",
+            "user": {
+                "username": "admin",
+                "avatar": null,
+                "records": []
+            }
+        }
+    ]
+}
 };
 
 // == Types

@@ -1,16 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Card, Button, Figure, Row, Col } from 'react-bootstrap';
+
 
 import './coachCard.scss';
 
-class CoachCard extends React.Component {
-  componentDidMount() {
-
-  }
-
-
-  render() {
-    return (
+const CoachCard = ({ coach }) => {
+return (
       <Card className="bg-dark text-white header">
         <Card.Img src="" height="400" />
           <Card.ImgOverlay>
@@ -24,7 +20,7 @@ class CoachCard extends React.Component {
                     src="src/assets/img/profil-coach.png"
                   />
                   <Figure.Caption>
-                    <h3>Pro Fifa</h3>
+                    <h3>{coach.user.username}</h3>
                   </Figure.Caption>
                 </Figure>
               </Col>
@@ -54,9 +50,13 @@ class CoachCard extends React.Component {
               </Col>
             </Row>
           </Card.ImgOverlay>
-        </Card>
-    );
-  }
-}
+      </Card>
+  );
+};
+
+CoachCard.propTypes = {
+  coach: PropTypes.array.isRequired,
+};
+
 
 export default CoachCard;

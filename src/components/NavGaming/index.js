@@ -19,7 +19,7 @@ const NavGaming = ({ categories, games }) => (
                   return (
                     <NavLink
                       exact
-                      to={`/Jeux/${slug}`}
+                      to={`/Jeux/${slug}/coachs`}
                       key={name}
                     >
                       <NavDropdown.Item href="#home">{name}</NavDropdown.Item>

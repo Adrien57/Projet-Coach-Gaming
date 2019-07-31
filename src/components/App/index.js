@@ -14,6 +14,7 @@ import Home from 'src/components/Home';
 import FormCoach from 'src/components/FormCoach';
 import Login from 'src/components/Login';
 import Game from 'src/containers/Game';
+import CoachDetail from 'src/containers/CoachDetail';
 
 
 class App extends React.Component {
@@ -29,9 +30,11 @@ class App extends React.Component {
           <Nav />
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/jeux/:slug" exact component={Game} />
+            <Route path="/jeux/:slug/coachs" exact component={Game} />
             <Route path="/devenir-coach" exact component={FormCoach} />
             <Route path="/auth/login" exact component={Login} />
+            <Route path="/jeux/:slug/coachs/:slugcoach" exact component={CoachDetail} />
+
           </Switch>
           <Footer />
         </Container>

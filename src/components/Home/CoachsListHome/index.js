@@ -1,7 +1,7 @@
 // == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card, Button, Figure } from 'react-bootstrap';
+import { Card, Button, Figure, CardDeck, Row, Col } from 'react-bootstrap';
 
 // == Import : local
 import './coachsListHome.scss';
@@ -13,8 +13,10 @@ class CoachsListHome extends React.Component {
 
   render() {
     return (
-      <ul className="coachs-list">
-        <Card className="coachs-list__coach-card" style={{ width: '18rem' }}>
+    <Row>
+      <Col xs={6} md={12}>
+      <CardDeck>
+        <Card>
           <Figure className="coach-card__figure">
             <Figure.Image
               className="coach-card--image"
@@ -28,19 +30,21 @@ class CoachsListHome extends React.Component {
               Coach x
             </Figure.Caption>
           </Figure>
-          <Card.Body className="coach-card__body">
-            <Card.Title className="coach-card__body__title">Card Title</Card.Title>
-            <Card.Text className="coach-card__body__text">
-                Some quick example text to build on the card title and make up the bulk of
-                the card's content.
+          <Card.Body>
+            <Card.Title>Card title</Card.Title>
+            <Card.Text>
+          This is a wider card with supporting text below as a natural lead-in to
+          additional content. This content is a little bit longer.
             </Card.Text>
-            <Button variant="primary">Profil</Button>
           </Card.Body>
+          <Card.Footer>
+            <small className="text-muted">Last updated 3 mins ago</small>
+          </Card.Footer>
         </Card>
-        <Card className="coachs-list__coach-card" style={{ width: '18rem' }}>
+        <Card>
           <Figure className="coach-card__figure">
             <Figure.Image
-              className="coach-card__figure__image"
+              className="coach-card--image"
               width={171}
               height={180}
               alt="171x180"
@@ -51,19 +55,21 @@ class CoachsListHome extends React.Component {
               Coach x
             </Figure.Caption>
           </Figure>
-          <Card.Body className="coach-card__body">
-            <Card.Title className="coach-card__body__title">Card Title</Card.Title>
-            <Card.Text className="coach-card__body__text">
-                Some quick example text to build on the card title and make up the bulk of
-                the card's content.
+          <Card.Body>
+            <Card.Title>Card title</Card.Title>
+            <Card.Text>
+        This card has supporting text below as a natural lead-in to additional
+        content.{' '}
             </Card.Text>
-            <Button variant="primary">Profil</Button>
           </Card.Body>
+          <Card.Footer>
+            <small className="text-muted">Last updated 3 mins ago</small>
+          </Card.Footer>
         </Card>
-        <Card className="coachs-list__coach-card" style={{ width: '18rem' }}>
+        <Card>
           <Figure className="coach-card__figure">
             <Figure.Image
-              className="coach-card__figure__image"
+              className="coach-card--image"
               width={171}
               height={180}
               alt="171x180"
@@ -74,16 +80,21 @@ class CoachsListHome extends React.Component {
               Coach x
             </Figure.Caption>
           </Figure>
-          <Card.Body className="coach-card__body">
-            <Card.Title className="coach-card__body__title">Card Title</Card.Title>
-            <Card.Text className="coach-card__body__text">
-                Some quick example text to build on the card title and make up the bulk of
-                the card's content.
+          <Card.Body>
+            <Card.Title>Card title</Card.Title>
+            <Card.Text>
+        This is a wider card with supporting text below as a natural lead-in to
+        additional content. This card has even longer content than the first to
+        show that equal height action.
             </Card.Text>
-            <Button variant="primary">Profil</Button>
           </Card.Body>
+          <Card.Footer>
+            <small className="text-muted">Last updated 3 mins ago</small>
+          </Card.Footer>
         </Card>
-      </ul>
+      </CardDeck>
+      </Col>
+    </Row>
     );
   }
 }
