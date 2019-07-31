@@ -2,17 +2,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Card, Header,Button } from 'react-bootstrap';
+import axios from 'axios';
 
 // == Import : local
 import './reviews.scss';
 
 class Reviews extends React.Component {
 
-  componentDidMount(){
-}
+    state= {
+      reviews:[],
+    }
 
-  render() {
-    return (
+    componentDidMount() {
+      axios.get(`http://sylvere-leipertz.vpnuser.oclock.io/projet-CoachsGaming-back/coach-gaming/public/reviews`)
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+
+    render() {
+      return (
       <div className="reviews">
         <h2>Ils se sont lancés ! </h2>
         <ul className="reviews-list">
@@ -67,8 +79,8 @@ class Reviews extends React.Component {
         </div>
       </div>
 
-    );
-  }
+      );
+    }
 }
 
 

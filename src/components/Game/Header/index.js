@@ -23,9 +23,7 @@ const Header = (props) => {
     image,
   } = props;
   return (
-    <div className="game-header">
-      <header
-        className="game-header__header"
+    <div className="game-header"
         style={{
           backgroundImage: `url(${image})`,
         }}
@@ -34,7 +32,7 @@ const Header = (props) => {
         <p className="game-header__description">
           {description}
         </p>
-      </header>
+      
       <nav className="game-header__nav">
         <ul className="game-header__nav__ul">
           <li><a className="game-header__nav__ul--link" href="#">Fifa</a></li>

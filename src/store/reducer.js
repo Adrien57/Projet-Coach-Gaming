@@ -4,7 +4,7 @@ const initialState = {
     {
         "name": "FIFA",
         "description": "Provident facere excepturi sed officiis. Velit mollitia ut voluptatem repellat. Debitis ex quia sunt beatae nihil doloremque a. Placeat est enim fuga reprehenderit. Omnis aut corrupti adipisci quia est ipsam.",
-        "header_background": "http://www.chauveau.net/maiores-quia-eligendi-quo.html",
+        "header_background": "https://www.pixelstalk.net/wp-content/uploads/2016/11/Fifa-Backgrounds.jpg",
         "slug": "fifa",
         "info_coaches": [
             {
@@ -132,7 +132,7 @@ const initialState = {
     {
         "name": "PUBG",
         "description": "Consequatur omnis recusandae autem et sed ratione quisquam alias. Nam reiciendis ducimus quis ut ipsa quia. Omnis error et perspiciatis omnis nam.",
-        "header_background": "http://www.leblanc.fr/voluptatem-tempora-dignissimos-modi-fugit-molestiae",
+        "header_background": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiXTcDuiwfD_8vmUF_ceZnZFj3PrkNYZVRmIOrfqwe2LsjF1DqQA",
         "slug": "pubg",
         "info_coaches": [
             {
