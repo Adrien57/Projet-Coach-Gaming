@@ -7,11 +7,10 @@ import gamesData from 'src/data/games';
 
 // == Import : local
 import './app.scss';
-import Nav from 'src/components/NavGaming';
+import Nav from 'src/containers/NavGaming';
 import Footer from 'src/components/Footer';
 
 import Home from 'src/components/Home';
-import CoachDetail from 'src/components/CoachDetail';
 import FormCoach from 'src/components/FormCoach';
 import Login from 'src/components/Login';
 import Game from 'src/containers/Game';
@@ -27,7 +26,7 @@ class App extends React.Component {
     return (
       <div id="app">
         <Container>
-          <Nav categories={categoriesData} games={gamesData} />
+          <Nav />
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/jeux/:slug" exact component={Game} />

@@ -4,25 +4,27 @@ import PropTypes from 'prop-types';
 
 // == Import : local
 import Header from 'src/components/Game/Header';
-import CoachsList from 'src/components/CoachsList';
+import CoachsList from 'src/components/Game/CoachsList';
 
 import './game.scss';
 
 // == Composant
-const Game = ({ game }) => (
+const Game = ({ games }) => (
   <div>
     <Header
-      name={game.name}
-      description={game.description}
+      name={games.name}
+      description={games.description}
+      image={games.header_background}
     />
-    <CoachsList />
+    <CoachsList coachs={games.info_coaches} />
   </div>
 );
 
 Game.propTypes = {
-  game: PropTypes.shape({
+  games: PropTypes.shape({
     name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
+    header_background: PropTypes.string.isRequired,
   }).isRequired,
 };
 

@@ -20,30 +20,30 @@ const Header = (props) => {
   const {
     name,
     description,
-    headerBg,
+    image,
   } = props;
   return (
-    <div className="gamesList">
+    <div className="game-header">
       <header
-        className="gameList-header"
+        className="game-header__header"
         style={{
-          backgroundImage: `url(${headerBg})`,
+          backgroundImage: `url(${image})`,
         }}
       >
-        <h1 className="gamesList__title">{name}</h1>
-        <p className="gamesList__description">
+        <h1 className="game-header__title">{name}</h1>
+        <p className="game-header__description">
           {description}
         </p>
       </header>
-              <nav className="gamesList__nav">
-                  <ul className="gamesList__nav__ul">
-            <li><a className="gamesList__nav__ul--link" href="#">Fifa</a></li>
-            <li><a className="gamesList__nav__ul--link" href="#">Overwatch</a></li>
-            <li><a className="gamesList__nav__ul--link" href="#">Pubg</a></li>
-            <li><a className="gamesList__nav__ul--link" href="#">Smash Ultimate</a></li>
-          </ul>
-        </nav>
-      </div>
+      <nav className="game-header__nav">
+        <ul className="game-header__nav__ul">
+          <li><a className="game-header__nav__ul--link" href="#">Fifa</a></li>
+          <li><a className="game-header__nav__ul--link" href="#">Overwatch</a></li>
+          <li><a className="game-header__nav__ul--link" href="#">Pubg</a></li>
+          <li><a className="game-header__nav__ul--link" href="#">Smash Ultimate</a></li>
+        </ul>
+      </nav>
+    </div>
   );
 };
 
@@ -53,7 +53,7 @@ const Header = (props) => {
 Header.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  headerBg: PropTypes.string.isRequired,
+  
 };
 
 // Export

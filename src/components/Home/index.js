@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 // == Import : local
 import './home.scss';
 import HeaderHome from 'src/components/Home/HeaderHome';
-import CoachsList from 'src/components/CoachsList';
+import CoachsListHome from 'src/components/Home/CoachsListHome';
 import Reviews from 'src/components/Home/Reviews';
 import Informations from 'src/components/Home/Informations';
 
@@ -19,7 +19,7 @@ class Home extends React.Component {
     return (
       <div className="home">
         <HeaderHome />
-        <CoachsList />
+        <CoachsListHome />
         <Reviews />
         <Informations />
       </div>
