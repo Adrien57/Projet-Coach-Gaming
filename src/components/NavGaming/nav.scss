@@ -1,4 +1,16 @@
 .navbar
 {
   font-size: 20px;
+
+  &-ul{
+    margin: auto;
+  }
+
+  &-ul-li{
+    padding: .5rem 1rem;
+    color: red;
+  }
+}
+.navbar-light .navbar-nav .nav-link{
+  color: red;
 }

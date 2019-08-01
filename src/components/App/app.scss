@@ -1,3 +1,9 @@
+@import 'src/styles/vars';
 #app {
   margin: 1em auto;
+  
+}
+body{
+  background-color: $body-background;
+  font-family: 'Heebo', sans-serif;
 }

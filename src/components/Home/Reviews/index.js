@@ -14,7 +14,7 @@ class Reviews extends React.Component {
     }
 
     componentDidMount() {
-      axios.get(`http://sylvere-leipertz.vpnuser.oclock.io/projet-CoachsGaming-back/coach-gaming/public/reviews`)
+      axios.get(`http://92.243.9.86/projet-CoachsGaming-back/coach-gaming/public/reviews`)
         .then((response) => {
           this.setState({
             reviews: response.data,
@@ -57,7 +57,5 @@ class Reviews extends React.Component {
       );
     }
 }
-
-
 // == Export
 export default Reviews;

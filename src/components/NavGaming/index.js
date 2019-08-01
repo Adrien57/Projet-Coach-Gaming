@@ -7,10 +7,10 @@ import PropTypes from 'prop-types';
 import './nav.scss';
 
 const NavGaming = ({ categories, games }) => (
-  <Navbar bg="light" expand="lg" className="navbar">
+  <Navbar expand="lg" className="navbar">
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className="mr-auto">
+      <Nav className="mr-auto navbar-ul">
         {categories.map(({ route, label }) => {
           if (label === 'Jeux') {
             return (
@@ -35,8 +35,10 @@ const NavGaming = ({ categories, games }) => (
                 exact
                 to={route}
                 key={label}
+                href="#home"
+                className="navbar-ul-li"
               >
-                <Nav.Link href="#home">{label}</Nav.Link>
+              {label}
               </NavLink>
             );
           }
