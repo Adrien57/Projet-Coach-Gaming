@@ -1,7 +1,7 @@
 // == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Card, Header,Button } from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 import axios from 'axios';
 import { FaStar } from 'react-icons/fa';
 
@@ -14,7 +14,7 @@ class Reviews extends React.Component {
     }
 
     componentDidMount() {
-      axios.get(`http://sylvere-leipertz.vpnuser.oclock.io/projet-CoachsGaming-back/coach-gaming/public/reviews`)
+      axios.get(`http://92.243.9.86/projet-CoachsGaming-back/coach-gaming/public/reviews`)
         .then((response) => {
           this.setState({
             reviews: response.data,
@@ -32,7 +32,7 @@ class Reviews extends React.Component {
           <ul className="reviews-list">
             {this.state.reviews.map((review) => {
               return (
-                <Card className="reviews-list__card">
+                <Card key={review.id} className="reviews-list__card">
                   <Card.Header className="reviews-list__card__header">{review.rating} <FaStar /></Card.Header>
                   <Card.Body className="reviews-list__card__body">
                     <blockquote className="blockquote mb-0">
