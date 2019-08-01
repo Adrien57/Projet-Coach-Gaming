@@ -29,7 +29,7 @@ const initialState = {
         "header_background": "http://www.allain.org/doloremque-qui-fugiat-ut-et-iste-doloremque",
         "slug": "overwatch",
         "info_coaches": [
-            {
+            { 
                 "price": 69,
                 "rating": 5,
                 "user": {
