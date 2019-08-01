@@ -14,7 +14,7 @@ class Reviews extends React.Component {
     }
 
     componentDidMount() {
-      axios.get(`http://sylvere-leipertz.vpnuser.oclock.io/projet-CoachsGaming-back/coach-gaming/public/reviews`)
+      axios.get(`http://sylvere-leipertz.vpnuser.oclock.io/projet-CoachsGaming-back/coach-gaming/public/game/coucou`)
         .then((response) => {
           console.log(response);
         })
