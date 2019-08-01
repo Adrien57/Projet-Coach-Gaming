@@ -10,6 +10,8 @@ import './game.scss';
 
 // == Composant
 const Game = ({ games }) => (
+
+
   <div>
     <Header
       name={games.name}

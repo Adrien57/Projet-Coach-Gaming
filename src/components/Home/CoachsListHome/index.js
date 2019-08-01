@@ -32,7 +32,7 @@ class CoachsListHome extends React.Component {
           <CardDeck>
             {this.state.bestCoachs.map(( coach ) => {
               return (
-                <Card key={coach.id} >
+                <Card key={coach.id}>
                   <Figure className="coach-card__figure">
                     <Figure.Image
                       className="coach-card--image"

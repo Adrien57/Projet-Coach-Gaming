@@ -46,20 +46,15 @@ const NavGaming = ({ categories, games }) => (
   </Navbar>
 );
 
-// NavGaming.propTypes = {
-//   categories: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       label: PropTypes.string.isRequired,
-//       route: PropTypes.string.isRequired,
-//     }),
-//   ).isRequired,
-//   games: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       name: PropTypes.string.isRequired,
-//       slug: PropTypes.string.isRequired,
-//     }),
-//   ).isRequired,
-// };
+NavGaming.propTypes = {
+  categories: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      route: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+  games: PropTypes.array.isRequired,
+};
 
 export default NavGaming;
   
