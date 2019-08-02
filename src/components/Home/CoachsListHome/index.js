@@ -2,6 +2,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Card, Button, Figure, CardDeck, Row, Col } from 'react-bootstrap';
+import { IconContext } from "react-icons";
+import { IoIosStar } from 'react-icons/io';
 import axios from 'axios';
 
 // == Import : local
@@ -27,38 +29,45 @@ class CoachsListHome extends React.Component {
 
   render() {
     return (
-      <Row>
-        <Col xs={6} md={12}>
-          <CardDeck>
+      <Row className="margin-row ">
+      <h2 className="home-title"> Choisis ton coach </h2>
+        <Col lg={12}>
+        <Card.Body>
+          <CardDeck className="home-cardDeck">
             {this.state.bestCoachs.map(( coach ) => {
               return (
-                <Card key={coach.id} >
-                  <Figure className="coach-card__figure">
-                    <Figure.Image
-                      className="coach-card--image"
-                      width={171}
-                      height={180}
-                      alt="171x180"
-                      src="src/assets/img/profil.jpg"
-                      roundedCircle
-                    />
-                    <Figure.Caption>
-                      {coach.rating}
-                    </Figure.Caption>
-                  </Figure>
+                <Col xs={12} md={6} lg={4}>
+                  <Card key={coach.id} className="home-cardDeck-coach">
+                    <Figure className="home-cardDeck-picture">
+                      <Figure.Image
+                        className="coach-card--image"
+                        width={171}
+                        height={180}
+                        alt="171x180"
+                        src="src/assets/img/profil.jpg"
+                        roundedCircle
+                      />
+                      <Figure.Caption className="home-cardDeck-rating">
+                        {coach.rating}
+                        <IconContext.Provider value={{ color: "rgb(230, 230, 142)", size:"1.2em" }}>
+                        <IoIosStar />
+                        </IconContext.Provider>
+                      </Figure.Caption>
+                    </Figure>
                   <Card.Body>
-                    <Card.Title>{coach.user.username}</Card.Title>
+                    <Card.Title className="home-cardDeck-name">{coach.user.username}</Card.Title>
                     <Card.Text>
-                      
+                    {coach.team.name}
+                    <p className="home-cardDeck-price">{coach.price} &euro; / h</p>
                     </Card.Text>
+                    <Button variant="primary">Voir profil</Button>
                   </Card.Body>
-                  <Card.Footer>
-                    <small className="text-muted">{coach.team.name}</small>
-                  </Card.Footer>
                 </Card>
+                </Col>
               );
             })};
           </CardDeck>
+          </Card.Body>
         </Col>
       </Row>
     );

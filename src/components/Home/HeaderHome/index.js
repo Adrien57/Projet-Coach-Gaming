@@ -13,27 +13,37 @@ class HeaderHome extends React.Component {
 
   render() {
     return (
-
-
-      <div 
-        className="gamesList"
-        style={{
-          backgroundImage: `url(src/assets/img/fifa-bg.jpg)`,
-        }}>
-        <h1 className="gamesList__title">Bienvenue sur Coach-In !</h1>
-        <p className="gamesList__description">
-          Selectionne le jeu sur lequel tu veux progresser !
-        </p>
-        <nav className="gamesList__nav">
-          <ul className="gamesList__nav__ul">
-          
-            <li><a className="gamesList__nav__ul--link" href="#">Fifa</a></li>
-            <li><a className="gamesList__nav__ul--link" href="#">Overwatch</a></li>
-            <li><a className="gamesList__nav__ul--link" href="#">Pubg</a></li>
-            <li><a className="gamesList__nav__ul--link" href="#">Smash Ultimate</a></li>
-          </ul>
-        </nav>
-      </div>
+        <Card className="bg-dark text-white header-bg">
+          <div
+            className="gamesList"
+            style={{
+              backgroundImage: `url(src/assets/img/coach-bg.jpg)`,
+            }}
+            >
+            <Card.ImgOverlay className="background-overlay">
+              <Card.Title><h1>Bienvenu sur coach in</h1></Card.Title>
+              <Card.Text>
+              This is a wider card with supporting text below as a natural lead-in to
+              additional content. This content is a little bit longer.
+              </Card.Text>
+              <Card.Text>Last updated 3 mins ago</Card.Text>
+            </Card.ImgOverlay>
+          </div>
+          <Nav className="justify-content-center gamesList-nav" activeKey="/home">
+            <Nav.Item className="gamesList-nav-li">
+              <Nav.Link href="/home">Fifa</Nav.Link>
+            </Nav.Item>
+            <Nav.Item className="gamesList-nav-li">
+              <Nav.Link eventKey="link-1">Overwatch</Nav.Link>
+            </Nav.Item>
+            <Nav.Item className="gamesList-nav-li">
+              <Nav.Link eventKey="link-2">PUBG</Nav.Link>
+            </Nav.Item>
+            <Nav.Item className="gamesList-nav-li">
+              <Nav.Link eventKey="link-2">SSBU</Nav.Link>
+            </Nav.Item>
+          </Nav>
+        </Card>
     );
   }
 }

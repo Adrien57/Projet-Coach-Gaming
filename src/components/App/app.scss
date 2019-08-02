@@ -1,9 +1,15 @@
 @import 'src/styles/vars';
 #app {
-  margin: 1em auto;
+  margin: auto;
   
+}
+.card-img{
+  height: 400px;
 }
 body{
   background-color: $body-background;
   font-family: 'Heebo', sans-serif;
+}
+.margin-row{
+  padding: 1em 0;
 }

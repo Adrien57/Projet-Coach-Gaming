@@ -1,9 +1,10 @@
 // == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card, Button } from 'react-bootstrap';
+import { Card, Button, Row, Col, CardDeck } from 'react-bootstrap';
 import axios from 'axios';
-import { FaStar } from 'react-icons/fa';
+import { IconContext } from "react-icons";
+import { IoIosStar } from 'react-icons/io';
 
 // == Import : local
 import './reviews.scss';
@@ -27,32 +28,36 @@ class Reviews extends React.Component {
 
     render() {
       return (
-        <div className="reviews">
-          <h2>Ils se sont lancés ! </h2>
-          <ul className="reviews-list">
-            {this.state.reviews.map((review) => {
-              return (
-                <Card key={review.id} className="reviews-list__card">
-                  <Card.Header className="reviews-list__card__header">{review.rating} <FaStar /></Card.Header>
-                  <Card.Body className="reviews-list__card__body">
-                    <blockquote className="blockquote mb-0">
-                      <p>
-                        {' '}
-                        {review.comment}{' '}
-                      </p>
-                      <footer className="blockquote-footer">
-                      Avis de <cite title="Source Title">{review.user.username}</cite>
-                      </footer>
-                    </blockquote>
-                  </Card.Body>
-                </Card>
-              );
-            })}
-          </ul>
-          <div className="reviews-link">
-            <Button href="#">Créer mon compte</Button>
-          </div>
-        </div>
+        <Row className="margin-row reviews">
+        <h2 className="reviews-title">Ce que pensent les élèves</h2>
+          <Col lg={12}>
+            <Card.Body className="text-center">
+              <CardDeck className="reviews-cardDeck">
+              
+                {this.state.reviews.map((review) => {
+                return (
+                  <Col xs={12} md={12} lg={4}>
+                      <Card key={review.id} >
+                        <Card.Title>{review.rating}
+                        <IconContext.Provider value={{ color: "rgb(230, 230, 142)", size:"1.2em" }}>
+                        <IoIosStar />
+                        </IconContext.Provider>
+                         </Card.Title>
+                        <Card.Text>
+                        {review.comment}
+                        </Card.Text>
+                        <Card.Footer className="text-muted">
+                        avis de {review.user.username}
+                        </Card.Footer>
+                      </Card>
+                    </Col>
+                );
+              })}
+                </CardDeck>
+                <Button href="#">Créer mon compte</Button>
+            </Card.Body>
+          </Col>
+        </Row>
 
       );
     }

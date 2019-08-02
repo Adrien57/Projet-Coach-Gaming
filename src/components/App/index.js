@@ -26,8 +26,7 @@ class App extends React.Component {
   render() {
     return (
       <div id="app">
-        <Container>
-          <Nav />
+        <Nav />
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/jeux/:slug/coachs" exact component={Game} />
@@ -36,8 +35,7 @@ class App extends React.Component {
             <Route path="/jeux/:slug/coachs/:slugcoach" exact component={CoachDetail} />
 
           </Switch>
-          <Footer />
-        </Container>
+        <Footer />
       </div>
     );
   }

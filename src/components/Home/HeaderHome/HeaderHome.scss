@@ -6,49 +6,18 @@
   align-items: flex-start;
   border-radius: 5px;
   width: 100%;
-  height: auto;
+  height: 400px;
   background-size: cover;
-  
-  &__title{
-    color:white;
-    padding: 1.5em 0 0.2em 0.5em;
-    font-size:3.5em;
-    font-weight: bold;
-    letter-spacing: 1px;
-    line-height: 2;
-    
-}
-  &__description{
-    color:white;
-    padding-left:1em;
-    font-size: 2.5em;
-    font-weight: bold;
-  }
-  
-  &__nav{
-    border: black solid 2px;
-    width: 100%;
-    background-color:black;
-    
-    &__ul{
-      display: flex;
-      margin-top:0.5em;
-    flex-direction: row;
-    justify-content:space-around;
-    align-items: center;
-    list-style: none;
-    
-    
-    
-    &--link{
-      display: flex;
-      font-size: 2.2em;
-    }
-  }
-  
-    
-}
+
 
   
-  
+  &-nav{
+    z-index: 1;
+    height: 60px;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: #06264e8a;
+    padding-top: 10px;
+  }
 }
+

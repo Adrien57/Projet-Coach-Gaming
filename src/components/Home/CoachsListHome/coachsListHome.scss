@@ -1,0 +1,31 @@
+.home-title{
+  color: #fff;
+  margin: auto;
+}
+
+.home-cardDeck{
+  text-align: center;
+  width: 60%;
+  margin: auto;
+  &-coach{
+    width: 90%;
+  }
+  &-picture{
+    margin: auto;
+  }
+  &-rating{
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+  }
+  &-price{
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+  &-name{
+    text-transform: uppercase;
+  }
+}
+.card-deck .card{
+  margin: 10px 20px;
+}

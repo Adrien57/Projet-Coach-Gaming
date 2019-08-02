@@ -1,6 +1,9 @@
+@import 'src/styles/vars';
 .navbar
 {
-  font-size: 20px;
+  z-index: 1;
+  width: 100%;
+  font-size: 15px;
 
   &-ul{
     margin: auto;
@@ -8,9 +11,28 @@
 
   &-ul-li{
     padding: .5rem 1rem;
-    color: red;
+    color: $nav-link;
+    margin: 0 20px;
+  }
+  &-ul-li:hover{
+    color: #fff;
+    text-decoration: none;
+  }
+
+  button{
+  background-color: $nav-link;
+  border-color: none;
   }
 }
 .navbar-light .navbar-nav .nav-link{
-  color: red;
+  color: $nav-link;
+  margin: 0 20px;
+}
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus{
+  color: $nav-link;
+}
+.dropdown-item.active, .dropdown-item:active{
+  background-color: #fff;
+  color: $body-background;
 }

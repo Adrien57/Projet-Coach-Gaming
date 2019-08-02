@@ -1,7 +1,7 @@
 // Imports NPM
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card } from 'react-bootstrap';
+import { Card, Nav } from 'react-bootstrap';
 
 // Imports locaux
 import './header.scss';
@@ -23,25 +23,39 @@ const Header = (props) => {
     image,
   } = props;
   return (
-    <div className="game-header"
-        style={{
-          backgroundImage: `url(${image})`,
-        }}
-      >
-        <h1 className="game-header__title">{name}</h1>
-        <p className="game-header__description">
+    <React.Fragment>
+
+      <Card className="bg-dark text-white header-bg">
+        <div
+        className="gamesList"
+          style={{
+            backgroundImage: `url(${image})`,
+          }}
+        >
+        <Card.ImgOverlay className="background-overlay">
+          <Card.Title><h1>{name}</h1></Card.Title>
+          <Card.Text>
           {description}
-        </p>
-      
-      <nav className="game-header__nav">
-        <ul className="game-header__nav__ul">
-          <li><a className="game-header__nav__ul--link" href="#">Fifa</a></li>
-          <li><a className="game-header__nav__ul--link" href="#">Overwatch</a></li>
-          <li><a className="game-header__nav__ul--link" href="#">Pubg</a></li>
-          <li><a className="game-header__nav__ul--link" href="#">Smash Ultimate</a></li>
-        </ul>
-      </nav>
-    </div>
+          </Card.Text>
+          <Card.Text>Last updated 3 mins ago</Card.Text>
+        </Card.ImgOverlay>
+        </div>
+        <Nav className="justify-content-center gamesList-nav" activeKey="/home">
+            <Nav.Item className="gamesList-nav-li">
+              <Nav.Link href="/home">Fifa</Nav.Link>
+            </Nav.Item>
+            <Nav.Item className="gamesList-nav-li">
+              <Nav.Link eventKey="link-1">Overwatch</Nav.Link>
+            </Nav.Item>
+            <Nav.Item className="gamesList-nav-li">
+              <Nav.Link eventKey="link-2">PUBG</Nav.Link>
+            </Nav.Item>
+            <Nav.Item className="gamesList-nav-li">
+              <Nav.Link eventKey="link-2">SSBU</Nav.Link>
+            </Nav.Item>
+          </Nav>
+      </Card>
+    </React.Fragment>
   );
 };
 
@@ -51,6 +65,7 @@ const Header = (props) => {
 Header.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
   
 };
 

@@ -1,6 +1,6 @@
 // == Import : npm
 import React from 'react';
-import { Container, Nav } from 'react-bootstrap';
+import { Row, Nav } from 'react-bootstrap';
 
 // == Import : local
 import './footer.scss';
@@ -15,7 +15,7 @@ class CoachFooter extends React.Component {
 
   render() {
     return (
-      <Container>
+      <Row className="margin-row footer">
         <Nav className="justify-content-center footer" activeKey="/home">
           <Nav.Item>
             <Nav.Link href="/home">FAQ</Nav.Link>
@@ -27,7 +27,7 @@ class CoachFooter extends React.Component {
             <Nav.Link eventKey="link-2">Contact</Nav.Link>
           </Nav.Item>
         </Nav>
-      </Container>
+      </Row>
     );
   }
 }
