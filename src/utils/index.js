@@ -18,3 +18,8 @@ export const getGameBySlug = (gamesData, slug) => {
   const selectedGame = gamesData.find(game => getSlugFromString(game.name) === slug);
   return selectedGame;
 }
+
+export const getCoachBySlug = (coachsData, slug) => {
+  const selectedCoach = coachsData.find(coach => getSlugFromString(coach.user.username)===slug);
+  return selectedCoach;
+}

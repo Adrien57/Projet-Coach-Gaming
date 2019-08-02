@@ -2,8 +2,8 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import { Switch, Route } from 'react-router-dom';
-import categoriesData from 'src/data/categories';
-import gamesData from 'src/data/games';
+import reducer, { fetchGames } from 'src/store/reducer';
+import store from 'src/store';
 
 // == Import : local
 import './app.scss';
@@ -20,7 +20,7 @@ import CoachDetail from 'src/containers/CoachDetail';
 class App extends React.Component {
 
   componentDidMount() {
-
+    
   }
 
   render() {
