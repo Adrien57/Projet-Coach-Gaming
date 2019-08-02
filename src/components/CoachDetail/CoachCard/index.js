@@ -6,6 +6,7 @@ import { Card, Button, Figure, Row, Col } from 'react-bootstrap';
 import './coachCard.scss';
 
 const CoachCard = ({ coach }) => {
+  
 return (
       <Card className="bg-dark text-white header">
         <Card.Img src="" height="400" />
@@ -25,7 +26,7 @@ return (
                 </Figure>
               </Col>
               <Col xs={6} md={4}>
-                <Card.Title>Team</Card.Title>
+                <Card.Title></Card.Title>
                 <Card.Text>
                   Fifa Team 2019
                 </Card.Text>
@@ -55,7 +56,7 @@ return (
 };
 
 CoachCard.propTypes = {
-  coach: PropTypes.array.isRequired,
+  coachDetail: PropTypes.object.isRequired,
 };
 
 

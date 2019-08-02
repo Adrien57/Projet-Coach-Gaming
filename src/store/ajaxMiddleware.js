@@ -17,7 +17,7 @@ const ajaxMiddleware = store => next => (action) => {
       // ici lancer une requete axios
       axios.get('http://92.243.9.86/projet-CoachsGaming-back/coach-gaming/public/games')
         .then((response) => {
-          console.log(response.data);
+          
           // en cas de succès de ma requete je récupère des data dans response
           const gamesFromApi = response.data;
           // je peux émettre une nouvelle action

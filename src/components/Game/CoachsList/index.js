@@ -8,10 +8,12 @@ import { Card, Button, Figure, Row, Col, CardDeck } from 'react-bootstrap';
 import './coachsList.scss';
 
 const CoachsList = ({ coachs }) => {
+
+
   return (
-    // <ul className="coachs-list">
     <Row>
-      {coachs.map((coach) => {
+      {coachs.map((coach, changeCurrentCoachValue) => {
+
         return (
           <Col xs={6} md={4}>
           <CardDeck>
@@ -37,7 +39,7 @@ const CoachsList = ({ coachs }) => {
                   <Card.Footer>
                   <Link to={`coachs/${coach.user.slug}`}>
                     <Button>
-                       Test coach
+                       Voir le profil
                     </Button>
                   </Link>
                   </Card.Footer>

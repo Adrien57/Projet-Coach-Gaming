@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 // == Import : local
 import Header from 'src/components/Game/Header';
-import CoachsList from 'src/components/Game/CoachsList';
+import CoachsList from 'src/containers/Game/CoachsList';
 
 import './game.scss';
 
@@ -27,6 +27,7 @@ Game.propTypes = {
     name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     header_background: PropTypes.string.isRequired,
+    info_coaches: PropTypes.array.isRequired,
   }).isRequired,
 };
 
