@@ -27,6 +27,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         coachDetail: action.coachdetail,
+        loadingCoach: false,
       };
 
     default:
