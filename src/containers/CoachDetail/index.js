@@ -29,10 +29,8 @@ const mapStateToProps = (state, ownProps) => ({
  *  - ownProps : les props passées au container
  * Pas de disptach à transmettre ? const mapDispatchToProps = {};
  */
-const mapDispatchToProps = dispatch => ({
-  loadCoach: () => {
-    dispatch(fetchCoach());
-  },
+const mapDispatchToProps = (dispatch, ownProps) => ({
+
 });
 
 // Container

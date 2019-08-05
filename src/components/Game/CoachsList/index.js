@@ -15,7 +15,7 @@ const CoachsList = ({ coachs }) => {
       {coachs.map((coach, changeCurrentCoachValue) => {
 
         return (
-          <Col xs={6} md={4}>
+          <Col key={coach.id} xs={6} md={4}>
           <CardDeck>
                 <Card>
                   <Figure>
