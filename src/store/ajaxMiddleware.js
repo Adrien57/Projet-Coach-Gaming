@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { FETCH_GAMES, receiveGames } from 'src/store/reducer';
+import { FETCH_GAMES, receiveGames, receiveCoachDetail, FETCH_COACH } from 'src/store/reducer';
 
 // un middleware est une fonction qui intercepte les actions
 // qui décide de laisser passer ou non et/ou de lancer des tâches annexes
@@ -17,7 +17,7 @@ const ajaxMiddleware = store => next => (action) => {
       // ici lancer une requete axios
       axios.get('http://92.243.9.86/projet-CoachsGaming-back/coach-gaming/public/games')
         .then((response) => {
-          
+
           // en cas de succès de ma requete je récupère des data dans response
           const gamesFromApi = response.data;
           // je peux émettre une nouvelle action
@@ -27,6 +27,10 @@ const ajaxMiddleware = store => next => (action) => {
         .catch(() => {
           console.log('Une erreur s\'est produite');
         });
+      break;
+//     case FETCH_COACH:
+      
+// store.dispatch(receiveCoachDetail(coachDetailFromApi));
       break;
     // par défaut je laisse passer toutes les actions pour lesquelles je ne veux rien faire de particulier
     default:

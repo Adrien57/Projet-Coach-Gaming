@@ -3,14 +3,16 @@ const initialState = {
   games: [],
   loading: true,
   view: '',
-  currentCoach: '',
+  coachDetail: {},
+  loadingCoach: true,
 
 };
 
 // == Types
 export const FETCH_GAMES = 'FETCH_GAMES';
+export const FETCH_COACH = 'FETCH_COACH';
 const RECEIVE_GAMES = 'RECEIVE_GAMES';
-
+const RECEIVE_COACH = 'RECEIVE_COACH';
 
 // == Reducer
 const reducer = (state = initialState, action = {}) => {
@@ -21,7 +23,11 @@ const reducer = (state = initialState, action = {}) => {
         games: action.games,
         loading: false,
       };
-    
+    case RECEIVE_COACH:
+      return {
+        ...state,
+        coachDetail: action.coachdetail,
+      };
 
     default:
       return state;
@@ -29,7 +35,14 @@ const reducer = (state = initialState, action = {}) => {
 };
 
 // == Action Creators
+export const fetchCoach = () => ({
+  type: FETCH_COACH,
+});
 
+export const receiveCoachDetail = coachdetail => ({
+  type: RECEIVE_COACH,
+  coachdetail,
+});
 
 export const receiveGames = games => ({
   type: RECEIVE_GAMES,

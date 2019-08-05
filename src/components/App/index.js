@@ -1,9 +1,9 @@
 // == Import : npm
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Container } from 'react-bootstrap';
 import { Switch, Route } from 'react-router-dom';
-import reducer, { fetchGames } from 'src/store/reducer';
-import store from 'src/store';
+
 
 // == Import : local
 import './app.scss';
@@ -17,29 +17,34 @@ import Game from 'src/containers/Game';
 import CoachDetail from 'src/containers/CoachDetail';
 
 
-class App extends React.Component {
+const App = ({ loading }) => (
 
-  componentDidMount() {
-    
-  }
-
-  render() {
-    return (
-      <div id="app">
+  
+  <div id="app">
+    {loading && (
+      <div id="loading"> Chargement...</div>
+    )}
+    {!loading && (
+      <>
         <Nav />
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/jeux/:slug/coachs" exact component={Game} />
-            <Route path="/devenir-coach" exact component={FormCoach} />
-            <Route path="/auth/login" exact component={Login} />
-            <Route path="/jeux/:slug/coachs/:slugcoach" exact component={CoachDetail} />
-
-          </Switch>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/jeux/:slug/coachs" exact component={Game} />
+          <Route path="/devenir-coach" exact component={FormCoach} />
+          <Route path="/auth/login" exact component={Login} />
+          <Route path="/jeux/:slug/coachs/:slugcoach" exact component={CoachDetail} />
+        </Switch>
         <Footer />
-      </div>
-    );
-  }
-}
+      </>
+    )}
+  </div>
+);
+
+App.propTypes = {
+  loading: PropTypes.bool.isRequired,
+};
+
+
 
 // == Export
 export default App;
