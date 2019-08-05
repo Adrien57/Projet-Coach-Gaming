@@ -48,17 +48,4 @@ const NavGaming = ({ categories, games }) => (
   </Navbar>
 );
 
-<<<<<<< HEAD
-=======
-NavGaming.propTypes = {
-  categories: PropTypes.arrayOf(
-    PropTypes.shape({
-      label: PropTypes.string.isRequired,
-      route: PropTypes.string.isRequired,
-    }),
-  ).isRequired,
-  games: PropTypes.array.isRequired,
-};
-
->>>>>>> Axios-requests
 export default NavGaming;
