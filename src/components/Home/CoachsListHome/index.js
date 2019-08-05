@@ -36,8 +36,8 @@ class CoachsListHome extends React.Component {
           <CardDeck className="home-cardDeck">
             {this.state.bestCoachs.map(( coach ) => {
               return (
-                <Col key={coach.id} xs={12} md={6} lg={4}>
-                  <Card  className="home-cardDeck-coach">
+                <Col xs={12} md={6} lg={4}>
+                  <Card key={coach.id} className="home-cardDeck-coach">
                     <Figure className="home-cardDeck-picture">
                       <Figure.Image
                         className="coach-card--image"
