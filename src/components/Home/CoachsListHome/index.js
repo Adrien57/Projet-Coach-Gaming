@@ -36,9 +36,8 @@ class CoachsListHome extends React.Component {
           <CardDeck className="home-cardDeck">
             {this.state.bestCoachs.map(( coach ) => {
               return (
-<<<<<<< HEAD
-                <Col xs={12} md={6} lg={4}>
-                  <Card key={coach.id} className="home-cardDeck-coach">
+                <Col key={coach.id} xs={12} md={6} lg={4}>
+                  <Card  className="home-cardDeck-coach">
                     <Figure className="home-cardDeck-picture">
                       <Figure.Image
                         className="coach-card--image"
@@ -55,22 +54,6 @@ class CoachsListHome extends React.Component {
                         </IconContext.Provider>
                       </Figure.Caption>
                     </Figure>
-=======
-                <Card key={coach.id}>
-                  <Figure className="coach-card__figure">
-                    <Figure.Image
-                      className="coach-card--image"
-                      width={171}
-                      height={180}
-                      alt="171x180"
-                      src="src/assets/img/profil.jpg"
-                      roundedCircle
-                    />
-                    <Figure.Caption>
-                      {coach.rating}
-                    </Figure.Caption>
-                  </Figure>
->>>>>>> Axios-requests
                   <Card.Body>
                     <Card.Title className="home-cardDeck-name">{coach.user.username}</Card.Title>
                     <Card.Text>

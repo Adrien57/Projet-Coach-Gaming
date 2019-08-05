@@ -5,7 +5,8 @@ import { Card, Button, Figure, Row, Col } from 'react-bootstrap';
 
 import './coachCard.scss';
 
-const CoachCard = ({ coach }) => {
+const CoachCard = ({ coachDetail }) => {
+  console.log(coachDetail);
   
 return (
       <Card className="bg-dark text-white header">
@@ -21,7 +22,7 @@ return (
                     src="src/assets/img/profil-coach.png"
                   />
                   <Figure.Caption>
-                    <h3>{coach.user.username}</h3>
+                    <h3>{coachDetail.user.username}</h3>
                   </Figure.Caption>
                 </Figure>
               </Col>

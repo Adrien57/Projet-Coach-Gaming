@@ -36,8 +36,8 @@ class Reviews extends React.Component {
               
                 {this.state.reviews.map((review) => {
                 return (
-                  <Col xs={12} md={12} lg={4}>
-                      <Card key={review.id} >
+                  <Col key={review.id} xs={12} md={12} lg={4}>
+                      <Card >
                         <Card.Title>{review.rating}
                         <IconContext.Provider value={{ color: "rgb(230, 230, 142)", size:"1.2em" }}>
                         <IoIosStar />
