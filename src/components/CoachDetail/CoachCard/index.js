@@ -6,20 +6,21 @@ import { Card, Button, Figure, Row, Col } from 'react-bootstrap';
 import './coachCard.scss';
 
 const CoachCard = ({ coachDetail }) => {
-  console.log(coachDetail);
+  console.log(coachDetail.id);
   
 return (
       <Card className="bg-dark text-white header">
-        <Card.Img src="" height="400" />
+        
+        <Card.Img />
           <Card.ImgOverlay>
             <Row>
-              <Col xs={12} md={4}>
+              <Col xs={12} md={3}>
                 <Figure>
                   <Figure.Image
                     width={171}
                     height={180}
                     alt="171x180"
-                    src="src/assets/img/profil-coach.png"
+                    src={coachDetail.user.avatar}
                   />
                   <Figure.Caption>
                     <h3>{coachDetail.user.username}</h3>

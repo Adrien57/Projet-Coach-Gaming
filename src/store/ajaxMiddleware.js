@@ -25,12 +25,24 @@ const ajaxMiddleware = store => next => (action) => {
           store.dispatch(receiveGames(gamesFromApi));
         })
         .catch(() => {
-          console.log('Une erreur s\'est produite');
+          console.log('Une erreur s\'est produite11');
         });
       break;
-//     case FETCH_COACH:
-      
-// store.dispatch(receiveCoachDetail(coachDetailFromApi));
+    case FETCH_COACH:
+
+      axios.get(`http://92.243.9.86/projet-CoachsGaming-back/coach-gaming/public/coach`,{
+        params: {
+          slugCoach: this.props.params.slugCoach,
+        },
+      })
+        .then((response) => {
+          const coachDetailFromApi = response.data;
+          store.dispatch(receiveCoachDetail(coachDetailFromApi));
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+
       break;
     // par défaut je laisse passer toutes les actions pour lesquelles je ne veux rien faire de particulier
     default:
