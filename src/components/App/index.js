@@ -32,8 +32,8 @@ const App = ({ loading }) => (
           <Route path="/jeux/:slug/coachs" exact component={Game} />
           <Route path="/devenir-coach" exact component={FormCoach} />
           <Route path="/jeux/:slug/coachs/:slugcoach" exact component={CoachDetail} />
-          {/* <Route path="/auth/login" exact component={Login} />
-          <Route path="/auth/signup" exact component={SignUp} /> */}
+          <Route path="/auth/login" exact component={Login} />
+          <Route path="/auth/signup" exact component={SignUp} />
         </Switch>
         <Footer />
       </>

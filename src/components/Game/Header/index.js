@@ -44,9 +44,10 @@ const Header = (props) => {
         </div>
         <Nav className="justify-content-center gamesList-nav" activeKey="/home">
             
-        <NavLink
-              exact
-              to="/Jeux/fifa-19/coachs"
+          <NavLink
+            exact
+            to="/Jeux/fifa-19/coachs"
+            activeClassName="selected"
             >
               <Nav.Item className="gamesList-nav-li" href="/home">Fifa 19</Nav.Item>
             </NavLink>
@@ -54,6 +55,7 @@ const Header = (props) => {
             <NavLink
               exact
               to="/Jeux/overwatch/coachs"
+              activeClassName="selected"
             >
               <Nav.Item className="gamesList-nav-li" href="/home">Overwatch</Nav.Item>
             </NavLink>
@@ -61,6 +63,7 @@ const Header = (props) => {
             <NavLink
               exact
               to="/Jeux/pubg/coachs"
+              activeClassName="selected"
             >
               <Nav.Item className="gamesList-nav-li" href="/home">Pubg</Nav.Item>
             </NavLink>
@@ -68,6 +71,7 @@ const Header = (props) => {
             <NavLink
               exact
               to="/Jeux/super-smash-bros-ultimate/coachs"
+              activeClassName="selected"
             >
               <Nav.Item className="gamesList-nav-li" href="/home">SSBU</Nav.Item>
             </NavLink>

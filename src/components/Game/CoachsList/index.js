@@ -17,7 +17,7 @@ const CoachsList = ({ coachs }) => {
         return (
           <Col key={coach.id} xs={6} md={4}>
             <CardDeck>
-            <Card>
+            <Card bg="dark" text="white" border="info">
                   <Figure>
                     <Figure.Image
                       width={171}
@@ -27,11 +27,12 @@ const CoachsList = ({ coachs }) => {
                       roundedCircle
                     />
                     <Figure.Caption>
-                      {coach.user.username}
+                      {coach.team.name}
                     </Figure.Caption>
                   </Figure>
+                  <Card.Title>{coach.user.username}</Card.Title>
                   <Card.Body>
-                    <Card.Title>Team</Card.Title>
+                    <Card.Title>{coach.user.username}</Card.Title>
                     <Card.Text>
                       {coach.team.logo_description}
                     </Card.Text>
