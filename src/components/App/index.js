@@ -15,11 +15,11 @@ import FormCoach from 'src/components/FormCoach';
 import Login from 'src/components/Login';
 import Game from 'src/containers/Game';
 import CoachDetail from 'src/containers/CoachDetail';
+import SignUp from '../SignUp';
 
 
 const App = ({ loading }) => (
 
-  
   <div id="app">
     {loading && (
       <div id="loading"> Chargement...</div>
@@ -32,6 +32,7 @@ const App = ({ loading }) => (
           <Route path="/jeux/:slug/coachs" exact component={Game} />
           <Route path="/devenir-coach" exact component={FormCoach} />
           <Route path="/auth/login" exact component={Login} />
+          <Route path="/auth/signup" exact component={SignUp} />
           <Route path="/jeux/:slug/coachs/:slugcoach" exact component={CoachDetail} />
         </Switch>
         <Footer />
@@ -43,8 +44,6 @@ const App = ({ loading }) => (
 App.propTypes = {
   loading: PropTypes.bool.isRequired,
 };
-
-
 
 // == Export
 export default App;

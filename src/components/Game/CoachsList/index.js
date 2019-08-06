@@ -1,7 +1,7 @@
 // == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Link } from 'react-router-dom';
 import { Card, Button, Figure, Row, Col, CardDeck } from 'react-bootstrap';
 
 // == Import : local

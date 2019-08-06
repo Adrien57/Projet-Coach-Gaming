@@ -19,4 +19,5 @@ export default [
     route: '/auth/login',
     label: 'Inscription/Connexion',
   },
+  
 ];
