@@ -23,7 +23,7 @@ const CoachsList = ({ coachs }) => {
                       width={171}
                       height={180}
                       alt="171x180"
-                      src="holder.js/171x180"
+                      src=""
                       roundedCircle
                     />
                     <Figure.Caption>
