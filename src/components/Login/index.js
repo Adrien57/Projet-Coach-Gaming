@@ -6,16 +6,50 @@ import { NavLink } from 'react-router-dom';
 
 // == Import : local
 import './login.scss';
+import axios from 'axios';
 
 class Login extends React.Component {
-  componentDidMount() {
+
+  state = {
+    password: '',
+    view: 'login',
+    username: '',
+  }
+
+  changeHandler = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
+    console.log(this.state);
+  }
+
+  submitHandler = e => {
+    e.preventDefault();
+    axios({
+      method: 'post',
+      url: 'http://92.243.9.86/projet-CoachsGaming-back/coach-gaming/public/login',
+      data: this.state,
+    })
+      .then((response) => {
+        this.setState({
+          username: response.data,
+          view: 'logged',
+        })
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   render() {
+    const { view, password, username } = this.state;
     return (
         <Row className="margin-row form">
           <Col lg={12}>
-            <Nav className="justify-content-center" variant="pills" defaultActiveKey="/home">
+            {view === 'logged' && (
+              <p> Bienvenue {username}</p>
+            )}
+            {view === 'login' && (
+              <>
+              <Nav className="justify-content-center" variant="pills" defaultActiveKey="/home">
               <NavLink to="login">
                Connexion
               </NavLink>
@@ -26,11 +60,11 @@ class Login extends React.Component {
                   Inscription
                 </NavLink>
               </Nav.Item>
-            </Nav>
-            <Form>
+              </Nav>
+            <Form onSubmit={this.submitHandler}>
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Entrez votre mail</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" />
+                <Form.Control type="text" placeholder="Enter username" name="username" value={username} onChange={this.changeHandler} />
                 <Form.Text className="text-muted">
                   We'll never share your email with anyone else.
                 </Form.Text>
@@ -38,12 +72,14 @@ class Login extends React.Component {
 
               <Form.Group controlId="formBasicPassword">
                 <Form.Label>Entrez votre mot de passe</Form.Label>
-                <Form.Control type="password" placeholder="Password" />
+                <Form.Control type="password" placeholder="Password" name="password" value={password} onChange={this.changeHandler} />
               </Form.Group>
               <Button variant="primary" type="submit">
                 Connexion
               </Button>
             </Form>
+              </>
+            )}
           </Col>
         </Row>
     );

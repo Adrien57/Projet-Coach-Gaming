@@ -21,7 +21,7 @@ class HeaderHome extends React.Component {
             }}
             >
             <Card.ImgOverlay className="background-overlay">
-              <Card.Title><h1>Bienvenu sur coach in</h1></Card.Title>
+              <Card.Title><h1>Bienvenue sur coach in</h1></Card.Title>
               <Card.Text>
               This is a wider card with supporting text below as a natural lead-in to
               additional content. This content is a little bit longer.
