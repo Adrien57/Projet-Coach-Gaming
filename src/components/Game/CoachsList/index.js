@@ -1,7 +1,7 @@
 // == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
-import { BrowserRouter as Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Card, Button, Figure, Row, Col, CardDeck } from 'react-bootstrap';
 
 // == Import : local
@@ -12,12 +12,12 @@ const CoachsList = ({ coachs }) => {
 
   return (
     <Row>
-      {coachs.map((coach, changeCurrentCoachValue) => {
+      {coachs.map((coach) => {
 
         return (
           <Col key={coach.id} xs={6} md={4}>
-          <CardDeck>
-                <Card>
+            <CardDeck>
+            <Card>
                   <Figure>
                     <Figure.Image
                       width={171}
@@ -27,9 +27,9 @@ const CoachsList = ({ coachs }) => {
                       roundedCircle
                     />
                     <Figure.Caption>
-                   {coach.user.username}
-                  </Figure.Caption>
-                </Figure>
+                      {coach.user.username}
+                    </Figure.Caption>
+                  </Figure>
                   <Card.Body>
                     <Card.Title>Team</Card.Title>
                     <Card.Text>
@@ -37,15 +37,15 @@ const CoachsList = ({ coachs }) => {
                     </Card.Text>
                   </Card.Body>
                   <Card.Footer>
-                  <Link to={`coachs/${coach.user.slug}`}>
+                    <NavLink to={`coachs/${coach.user.slug}`}>
                     <Button>
                        Voir le profil
                     </Button>
-                  </Link>
+                  </NavLink>
                   </Card.Footer>
                 </Card>
-           </CardDeck>
-           </Col>
+          </CardDeck>
+          </Col>
             );
             })}
 

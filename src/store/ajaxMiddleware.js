@@ -25,7 +25,7 @@ const ajaxMiddleware = store => next => (action) => {
           store.dispatch(receiveGames(gamesFromApi));
         })
         .catch(() => {
-          console.log('Une erreur s\'est produite11');
+          console.log('Une erreur s\'est produite');
         });
       break;
     case FETCH_COACH:
