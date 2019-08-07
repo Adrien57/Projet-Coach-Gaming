@@ -81,9 +81,7 @@ const Header = (props) => {
   );
 };
 
-// validation des props
-// on va pouvoir recevoir des messages d'erreur si on ne reçoit pas
-// des données du type attendu
+
 Header.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,

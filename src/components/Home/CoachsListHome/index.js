@@ -36,7 +36,7 @@ class CoachsListHome extends React.Component {
           <CardDeck className="home-cardDeck">
             {this.state.bestCoachs.map(( coach ) => {
               return (
-                <Col xs={12} md={6} lg={4}>
+                <Col key={coach.id} xs={12} md={6} lg={4}>
                   <Card key={coach.id} className="home-cardDeck-coach">
                     <Figure className="home-cardDeck-picture">
                       <Figure.Image
@@ -57,7 +57,6 @@ class CoachsListHome extends React.Component {
                   <Card.Body>
                     <Card.Title className="home-cardDeck-name">{coach.user.username}</Card.Title>
                     <Card.Text>
-                    {coach.team.name}
                     <p className="home-cardDeck-price">{coach.price} &euro; / h</p>
                     </Card.Text>
                     <Button variant="primary">Voir profil</Button>
