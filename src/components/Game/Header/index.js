@@ -29,9 +29,9 @@ const Header = (props) => {
 
       <Card className="bg-dark text-white header-bg">
         <div
-        className="gamesList"
+          className="gamesList"
           style={{
-            backgroundImage: `url(src/assets/img/${name}.jpg)`,
+            backgroundImage: `url(${image})`,
           }}
         >
         <Card.ImgOverlay className="background-overlay">

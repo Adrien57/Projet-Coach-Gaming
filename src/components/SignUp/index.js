@@ -68,7 +68,6 @@ class SignUp extends React.Component {
               <Form.Control type="text" placeholder="Entrez votre prénom" value={name} onChange={this.changeHandler} name="name" />
             </Form.Group>
 
-
             <Form.Group as={Col} md="12" sm="12">
               <Form.Label>Pseudo</Form.Label>
               <Form.Control type="text" placeholder="Entrez votre pseudo" value={username} onChange={this.changeHandler} name="username" />
