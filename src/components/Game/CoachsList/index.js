@@ -34,7 +34,7 @@ const CoachsList = ({ coachs }) => {
                   <Card.Body>
                     <Card.Title>{coach.user.username}</Card.Title>
                     <Card.Text>
-                      {coach.team.logo_description}
+                      {coach.team.name}
                     </Card.Text>
                   </Card.Body>
                   <Card.Footer>
