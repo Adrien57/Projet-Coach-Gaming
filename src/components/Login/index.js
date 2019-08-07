@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Form, Button, Row, Col, Nav } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
 
 // == Import : local
 import './login.scss';
@@ -12,43 +12,51 @@ class Login extends React.Component {
 
   state = {
     password: '',
-    view: 'login',
     username: '',
+    redirect: false,
   }
 
   changeHandler = (e) => {
     this.setState({ [e.target.name]: e.target.value });
-    console.log(this.state);
   }
 
   submitHandler = e => {
     e.preventDefault();
-    axios({
-      method: 'post',
-      url: 'http://92.243.9.86/projet-CoachsGaming-back/coach-gaming/public/login',
-      data: this.state,
-    })
-      .then((response) => {
-        this.setState({
-          username: response.data,
-          view: 'logged',
-        })
+    if (this.state.username && this.state.password) {
+      axios({
+        method: 'post',
+        url: 'http://92.243.9.86/projet-CoachsGaming-back/coach-gaming/public/login',
+        data: this.state,
       })
-      .catch((error) => {
-        console.log(error);
-      });
+        .then((result) => {
+          const responseJSON = result;
+          console.log(responseJSON);
+          if (responseJSON.data) {
+            sessionStorage.setItem('userData', responseJSON);
+            this.setState({
+              redirect: true,
+            });
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+
   }
 
   render() {
-    const { view, password, username } = this.state;
+    const { password, username, redirect } = this.state;
+
     return (
         <Row className="margin-row form">
           <Col lg={12}>
-            {view === 'logged' && (
-              <p> Bienvenue {username}</p>
+            {redirect === true && (
+            <Redirect to={'/account'} />
             )}
-            {view === 'login' && (
-              <>
+            {sessionStorage.getItem('userData') && (
+            <Redirect to={'/account'} />
+            )}
               <Nav className="justify-content-center" variant="pills" defaultActiveKey="/home">
               <NavLink to="login">
                Connexion
@@ -78,8 +86,6 @@ class Login extends React.Component {
                 Connexion
               </Button>
             </Form>
-              </>
-            )}
           </Col>
         </Row>
     );

@@ -11,6 +11,7 @@ import Nav from 'src/containers/NavGaming';
 import Footer from 'src/components/Footer';
 
 import Home from 'src/components/Home';
+import HomeUser from 'src/components/HomeUser';
 import FormCoach from 'src/components/FormCoach';
 import Login from 'src/components/Login';
 import Game from 'src/containers/Game';
@@ -29,6 +30,7 @@ const App = ({ loading }) => (
         <Nav />
         <Switch>
           <Route path="/" exact component={Home} />
+          <Route path="/account" exact component={HomeUser} />
           <Route path="/jeux/:slug/coachs" exact component={Game} />
           <Route path="/devenir-coach" exact component={FormCoach} />
           <Route path="/jeux/:slug/coachs/:slugcoach" exact component={CoachDetail} />
