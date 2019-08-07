@@ -1,6 +1,6 @@
 // Node import
 const path = require('path');
-
+const TerserPlugin = require('terser-webpack-plugin');
 // Plugins de traitement pour dist/
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -50,10 +50,10 @@ module.exports = {
     },
     // Minification
     minimizer: [
-      new UglifyJsPlugin({
+      new TerserPlugin({
         cache: true,
         parallel: true,
-        sourceMap: false, // passer à true pour JS source maps
+        sourceMap: false,
       }),
       new OptimizeCSSAssetsPlugin({}),
     ],
