@@ -34,6 +34,8 @@ class HomeUser extends React.Component {
     });
   }
 
+  
+
   render() {
     const { redirect } = this.state;
     if (redirect) {

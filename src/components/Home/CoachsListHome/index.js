@@ -44,7 +44,7 @@ class CoachsListHome extends React.Component {
                         width={171}
                         height={180}
                         alt="171x180"
-                        src="src/assets/img/profil.jpg"
+                        src={coach.user.avatar}
                         roundedCircle
                       />
                       <Figure.Caption className="home-cardDeck-rating">

@@ -1,7 +1,7 @@
 // == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Form, Button, Row, Col, Nav } from 'react-bootstrap';
+import { Form, Button, Row, Col, Nav, Alert } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 
@@ -17,6 +17,7 @@ class SignUp extends React.Component {
     age: '',
     password: '',
     email: '',
+    submitted: 'false',
   }
 
   changeHandler = e => {
@@ -25,7 +26,15 @@ class SignUp extends React.Component {
 
   submitHandler = e => {
     e.preventDefault();
-    console.log(this.state);
+    
+    this.setState({ submitted: true});
+    const { username, password } = this.state;
+
+    // stop here if form is invalid
+    if (!(username && password)) {
+      return;
+    }
+
     axios({
       method: 'post',
       url: 'http://92.243.9.86/projet-CoachsGaming-back/coach-gaming/public/signup',
@@ -38,6 +47,7 @@ class SignUp extends React.Component {
         console.log(error);
       });
   };
+
 
   render() {
     const { name, lastname, username, age, password, email } = this.state;
@@ -89,7 +99,7 @@ class SignUp extends React.Component {
             </Form.Group>
 
             <Button variant="primary" type="submit" className="form-button">
-              Connexion
+            Valider
             </Button>
           </Form>
         </Col>

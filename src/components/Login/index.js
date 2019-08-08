@@ -14,6 +14,7 @@ class Login extends React.Component {
     password: '',
     username: '',
     redirect: false,
+    token: '',
   }
 
   changeHandler = (e) => {
@@ -35,6 +36,7 @@ class Login extends React.Component {
             sessionStorage.setItem('userData', responseJSON);
             this.setState({
               redirect: true,
+              token: responseJSON,
             });
           }
         })
@@ -43,6 +45,10 @@ class Login extends React.Component {
         });
     }
 
+  }
+
+  getInfosProfil = (token) => {
+    axios.get(`http://92.243.9.86/projet-CoachsGaming-back/coach-gaming/public/api/profil/}`)
   }
 
   render() {
@@ -83,7 +89,7 @@ class Login extends React.Component {
                 <Form.Control type="password" placeholder="Password" name="password" value={password} onChange={this.changeHandler} />
               </Form.Group>
               <Button variant="primary" type="submit">
-                Connexion
+                Valider
               </Button>
             </Form>
           </Col>

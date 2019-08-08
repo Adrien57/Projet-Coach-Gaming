@@ -1,3 +1,4 @@
+
 /* eslint-disable indent */
 // eslint-disable-next-line import/prefer-default-export
 import slugify from 'slugify';
@@ -23,3 +24,4 @@ export const getCoachBySlug = (coachsData, slug) => {
   const selectedCoach = coachsData.find(coach => getSlugFromString(coach.user.username)===slug);
   return selectedCoach;
 }
+
