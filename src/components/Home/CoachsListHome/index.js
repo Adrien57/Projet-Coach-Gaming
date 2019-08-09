@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import { Card, Button, Figure, CardDeck, Row, Col } from 'react-bootstrap';
 import { IconContext } from "react-icons";
+import Rater from 'react-rater';
+import 'react-rater/lib/react-rater.css';
 import { IoIosStar } from 'react-icons/io';
 import axios from 'axios';
 
@@ -49,10 +51,11 @@ class CoachsListHome extends React.Component {
                         roundedCircle
                       />
                       <Figure.Caption className="home-cardDeck-rating">
-                        {coach.rating}
-                        <IconContext.Provider value={{ color: "rgb(230, 230, 142)", size:"1.2em" }}>
-                        <IoIosStar />
-                        </IconContext.Provider>
+                        <Rater total={5} rating={coach.rating} interactive={false}
+                        />
+                        {/* <IconContext.Provider value={{ color: "rgb(230, 230, 142)", size:"1.2em" }}>
+                        
+                        </IconContext.Provider> */}
                       </Figure.Caption>
                     </Figure>
                   <Card.Body>

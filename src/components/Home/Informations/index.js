@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, Button, Row, Col } from 'react-bootstrap';
 import { MdLooksOne, MdLooksTwo, MdLooks3, MdLooks4 } from 'react-icons/md';
-
+import {NavLink} from 'react-router-dom';
 
 // == Import : local
 import './informations.scss';
@@ -33,7 +33,9 @@ const Informations = () => (
           <p className="informations__information__description">Debrief avec ton coach , analyse ta progression et tes axes de progression !</p>
         </Col>
       </Row>
-      <Button size="lg" className="informations__information__button">Créer mon compte</Button>
+      <NavLink to={'/auth/signup'}>
+        <Button size="lg" className="informations__information__button">Créer mon compte</Button>
+      </NavLink>
     </Col>
   </Row>
 
