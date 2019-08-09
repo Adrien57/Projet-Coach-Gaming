@@ -1,13 +1,15 @@
 // == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card, Button, Row, Col, CardDeck } from 'react-bootstrap';
+import { Card, Button, Row, Col, CardDeck,Figure } from 'react-bootstrap';
 import axios from 'axios';
+import { NavLink } from 'react-router-dom';
 import { IconContext } from "react-icons";
 import { IoIosStar } from 'react-icons/io';
 
 // == Import : local
 import './reviews.scss';
+import Rater from 'react-rater';
 
 class Reviews extends React.Component {
     state= {
@@ -37,24 +39,30 @@ class Reviews extends React.Component {
                 {this.state.reviews.map((review) => {
                 return (
                   <Col key={review.id} xs={12} md={12} lg={4}>
-                      <Card >
-                        <Card.Title>{review.rating}
+                      <Card className="reviews-cardDeck__card" >
+                      <Figure>
+                        <Figure.Image className="reviews-cardeck__card__image"
+                        alt="50x50"
+                        src={review.user.avatar}
+                        />
+                        <Card.Title>
                         <IconContext.Provider value={{ color: "rgb(230, 230, 142)", size:"1.2em" }}>
-                        <IoIosStar />
+                        <Rater total={5} rating={review.rating} interactive={false} />
                         </IconContext.Provider>
                          </Card.Title>
                         <Card.Text>
                         {review.comment}
                         </Card.Text>
                         <Card.Footer className="text-muted">
-                        avis de {review.user.username}
+                        Avis sur {review.info_coach.user.username}
                         </Card.Footer>
+                      </Figure>
                       </Card>
                     </Col>
                 );
               })}
                 </CardDeck>
-                <Button href="#">Créer mon compte</Button>
+                
             </Card.Body>
           </Col>
         </Row>

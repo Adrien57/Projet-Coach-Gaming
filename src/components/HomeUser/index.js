@@ -12,7 +12,7 @@ class HomeUser extends React.Component {
     super(props);
     this.state = {
       redirect: false,
-      
+
     };
     this.logout = this.logout.bind(this);
   }
@@ -46,7 +46,7 @@ class HomeUser extends React.Component {
     return (
 
       <div>
-        <h1>Hello</h1>
+        <h1>Hello</h1> 
         <button type="button" onClick={this.logout}>logout</button>
       </div>
     );

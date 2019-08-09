@@ -1,8 +1,11 @@
 // == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 import { Card, Button, Figure, CardDeck, Row, Col } from 'react-bootstrap';
 import { IconContext } from "react-icons";
+import Rater from 'react-rater';
+import 'react-rater/lib/react-rater.css';
 import { IoIosStar } from 'react-icons/io';
 import axios from 'axios';
 
@@ -37,7 +40,7 @@ class CoachsListHome extends React.Component {
             {this.state.bestCoachs.map(( coach ) => {
               return (
                 <Col key={coach.id} xs={12} md={6} lg={4}>
-                  <Card key={coach.id} className="home-cardDeck-coach">
+                  <Card key={coach.id} bg="dark" text="white" border="info" className="home-cardDeck-coach">
                     <Figure className="home-cardDeck-picture">
                       <Figure.Image
                         className="coach-card--image"
@@ -48,10 +51,11 @@ class CoachsListHome extends React.Component {
                         roundedCircle
                       />
                       <Figure.Caption className="home-cardDeck-rating">
-                        {coach.rating}
-                        <IconContext.Provider value={{ color: "rgb(230, 230, 142)", size:"1.2em" }}>
-                        <IoIosStar />
-                        </IconContext.Provider>
+                        <Rater total={5} rating={coach.rating} interactive={false}
+                        />
+                        {/* <IconContext.Provider value={{ color: "rgb(230, 230, 142)", size:"1.2em" }}>
+                        
+                        </IconContext.Provider> */}
                       </Figure.Caption>
                     </Figure>
                   <Card.Body>
@@ -59,7 +63,9 @@ class CoachsListHome extends React.Component {
                     <Card.Text>
                     <p className="home-cardDeck-price">{coach.price} &euro; / h</p>
                     </Card.Text>
+                    <NavLink to={`/jeux/:slug/coachs/${coach.user.slug}`}>
                     <Button variant="primary">Voir profil</Button>
+                    </NavLink>
                   </Card.Body>
                 </Card>
                 </Col>

@@ -64,6 +64,7 @@ class Login extends React.Component {
     const { password, username, redirect, submitted, error } = this.state;
 
     return (
+      
         <Row className="margin-row form">
           <Col lg={12}>
             {redirect === true && (
