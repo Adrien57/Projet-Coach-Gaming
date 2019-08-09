@@ -1,7 +1,7 @@
 // == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Form, Button, Row, Col, Nav } from 'react-bootstrap';
+import { Form, Button, Row, Col, Nav, Alert } from 'react-bootstrap';
 import { NavLink, Redirect } from 'react-router-dom';
 
 // == Import : local
@@ -14,7 +14,9 @@ class Login extends React.Component {
     password: '',
     username: '',
     redirect: false,
-    token: '',
+    submitted: false,
+    error: false,
+    data: '',
   }
 
   changeHandler = (e) => {
@@ -23,6 +25,15 @@ class Login extends React.Component {
 
   submitHandler = e => {
     e.preventDefault();
+
+    this.setState({ submitted: true });
+    const { username, password  } = this.state;
+
+    // stop here if form is invalid
+    if (!(username && password)) {
+      return;
+    }
+
     if (this.state.username && this.state.password) {
       axios({
         method: 'post',
@@ -31,43 +42,46 @@ class Login extends React.Component {
       })
         .then((result) => {
           const responseJSON = result;
-          console.log(responseJSON);
           if (responseJSON.data) {
-            sessionStorage.setItem('userData', responseJSON);
+            sessionStorage.setItem('userData', JSON.stringify(responseJSON));
             this.setState({
               redirect: true,
-              token: responseJSON,
+              data: responseJSON.data,
             });
+            console.log(this.state.data);
           }
         })
         .catch((error) => {
-          console.log(error);
+          this.setState({
+            error: true,
+          });
         });
     }
 
   }
 
-  getInfosProfil = (token) => {
-    axios.get(`http://92.243.9.86/projet-CoachsGaming-back/coach-gaming/public/api/profil/}`)
-  }
-
   render() {
-    const { password, username, redirect } = this.state;
+    const { password, username, redirect, submitted, error } = this.state;
 
     return (
         <Row className="margin-row form">
           <Col lg={12}>
             {redirect === true && (
-            <Redirect to={'/account'} />
+            <Redirect to={{
+              pathname: '/account',
+              state: { from: PropTypes.location },
+            }} />
             )}
             {sessionStorage.getItem('userData') && (
-            <Redirect to={'/account'} />
+            <Redirect to={{
+              pathname: '/account',
+              state: { from: PropTypes.location },
+            }} />
             )}
               <Nav className="justify-content-center" variant="pills" defaultActiveKey="/home">
               <NavLink to="login">
                Connexion
               </NavLink>
-              
               <span>/</span>
               <Nav.Item>
                 <NavLink to="signup">
@@ -79,18 +93,26 @@ class Login extends React.Component {
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Entrez votre mail</Form.Label>
                 <Form.Control type="text" placeholder="Enter username" name="username" value={username} onChange={this.changeHandler} />
-                <Form.Text className="text-muted">
-                  We'll never share your email with anyone else.
-                </Form.Text>
+                {submitted && !username &&
+                <div className="form-input-alert">Veuillez compléter ce champs*</div>}
               </Form.Group>
 
               <Form.Group controlId="formBasicPassword">
                 <Form.Label>Entrez votre mot de passe</Form.Label>
                 <Form.Control type="password" placeholder="Password" name="password" value={password} onChange={this.changeHandler} />
+                {submitted && !password &&
+              <div className="form-input-alert">Veuillez compléter ce champs*</div>}
               </Form.Group>
               <Button variant="primary" type="submit">
                 Valider
               </Button>
+              {error === true && 
+              (
+              <p>
+              <Alert variant="danger">Un ou plusieurs champs comporte des erreurs</Alert>
+              </p>
+              )
+              }
             </Form>
           </Col>
         </Row>

@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
+import axios from 'axios';
 
 // == Import : local
 import './homeuser.scss';
@@ -11,13 +12,14 @@ class HomeUser extends React.Component {
     super(props);
     this.state = {
       redirect: false,
+      
     };
     this.logout = this.logout.bind(this);
   }
 
-  componentWillMount() {
-    if (sessionStorage.getItem('userData')){
-      console.log("user session active");
+  componentDidMount() {
+    if (sessionStorage.getItem('userData')) {
+      console.log(sessionStorage.getItem('userData'));
     }
     else {
       this.setState({
@@ -34,7 +36,6 @@ class HomeUser extends React.Component {
     });
   }
 
-  
 
   render() {
     const { redirect } = this.state;
