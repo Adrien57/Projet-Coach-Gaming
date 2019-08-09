@@ -18,6 +18,7 @@ class HomeUser extends React.Component {
   componentWillMount() {
     if (sessionStorage.getItem('userData')){
       console.log("user session active");
+    
     }
     else {
       this.setState({
@@ -45,7 +46,7 @@ class HomeUser extends React.Component {
     return (
 
       <div>
-        <h1>Hello</h1>
+        <h1>Hello</h1> 
         <button type="button" onClick={this.logout}>logout</button>
       </div>
     );

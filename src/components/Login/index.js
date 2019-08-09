@@ -37,8 +37,9 @@ class Login extends React.Component {
             this.setState({
               redirect: true,
               token: responseJSON,
+              
             });
-          }
+          }console.log(this.state.token)
         })
         .catch((error) => {
           console.log(error);
@@ -53,8 +54,9 @@ class Login extends React.Component {
 
   render() {
     const { password, username, redirect } = this.state;
-
+    
     return (
+      
         <Row className="margin-row form">
           <Col lg={12}>
             {redirect === true && (
