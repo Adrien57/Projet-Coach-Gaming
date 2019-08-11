@@ -13,16 +13,23 @@ import Footer from 'src/components/Footer';
 import Home from 'src/components/Home';
 import HomeUser from 'src/containers/HomeUser';
 import FormCoach from 'src/components/FormCoach';
-import Login from 'src/components/Login';
+import Login from 'src/containers/Login';
 import Game from 'src/containers/Game';
 import CoachDetail from 'src/containers/CoachDetail';
 import SignUp from '../SignUp';
 
 
-const App = ({ loading }) => (
+class App extends React.Component {
+  
+  componentDidMount(){
 
-  <div id="app">
-    {loading && (
+  }
+
+  render() {
+    const { loading } = this.props;
+    return (
+    <div id="app">
+      {loading && (
       <div id="loading"> Chargement...</div>
     )}
     {!loading && (
@@ -40,9 +47,11 @@ const App = ({ loading }) => (
         </Switch>
         <Footer />
       </>
-    )}
-  </div>
-);
+      )}
+    </div>
+    )
+  }
+}
 
 App.propTypes = {
   loading: PropTypes.bool.isRequired,

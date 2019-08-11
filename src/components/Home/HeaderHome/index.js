@@ -60,6 +60,5 @@ class HeaderHome extends React.Component {
   }
 }
 
-
 // == Export
 export default HeaderHome;

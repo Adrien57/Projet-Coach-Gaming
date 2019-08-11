@@ -14,7 +14,7 @@ export const FETCH_GAMES = 'FETCH_GAMES';
 export const FETCH_COACH = 'FETCH_COACH';
 const RECEIVE_GAMES = 'RECEIVE_GAMES';
 const RECEIVE_COACH = 'RECEIVE_COACH';
-const CHANGE_LOGGED = 'CHANGE_LOGGED';
+
 
 // == Reducer
 const reducer = (state = initialState, action = {}) => {
@@ -31,11 +31,6 @@ const reducer = (state = initialState, action = {}) => {
         coachDetail: action.coachdetail,
         loadingCoach: false,
       };
-    case CHANGE_LOGGED:
-      return {
-        ...state,
-        logged: true,
-      };
 
     default:
       return state;
@@ -44,9 +39,6 @@ const reducer = (state = initialState, action = {}) => {
 
 // == Action Creators
 
-export const changeLogged = () => ({
-  type: CHANGE_LOGGED,
-});
 export const fetchCoach = () => ({
   type: FETCH_COACH,
 });

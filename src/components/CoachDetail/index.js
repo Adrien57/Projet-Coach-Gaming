@@ -33,6 +33,7 @@ class CoachDetail extends React.Component {
     axios.get(`http://92.243.9.86/projet-CoachsGaming-back/coach-gaming/public/coach/${this.props.match.params.slugcoach}`)
       .then((response) => {
         const coachDetailFromApi = response.data;
+        console.log(this.props.match.params);
         this.saveCoachDetail(coachDetailFromApi);
         console.log(this.state);
         

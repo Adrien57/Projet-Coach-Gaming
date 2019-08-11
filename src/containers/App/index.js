@@ -13,6 +13,7 @@ import App from 'src/components/App';
  */
 const mapStateToProps = state => ({
   loading: state.loading,
+  logged: state.logged,
 });
 
 /* === Actions ===
