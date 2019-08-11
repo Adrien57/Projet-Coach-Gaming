@@ -46,9 +46,12 @@ class Reviews extends React.Component {
                         src={review.user.avatar}
                         />
                         <Card.Title>
-                        <IconContext.Provider value={{ color: "rgb(230, 230, 142)", size:"1.2em" }}>
+                        <div>
+                          {review.user.username}
+                        </div>
+                        
                         <Rater total={5} rating={review.rating} interactive={false} />
-                        </IconContext.Provider>
+                        
                          </Card.Title>
                         <Card.Text>
                         {review.comment}
