@@ -40,7 +40,7 @@ class Login extends React.Component {
          if (responseJSON.data) {
            sessionStorage.setItem('userData', JSON.stringify(responseJSON));
            //fonction qui modifie la propiété "logged" de l'initial state en true;
-           store.dispatch(changeLogged());
+          
            this.setState({
              redirect: true,
              data: responseJSON.data,
