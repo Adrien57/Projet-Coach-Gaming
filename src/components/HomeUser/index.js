@@ -57,17 +57,6 @@ class HomeUser extends React.Component {
       console.log(error);
     });
     
-      // axios({
-      //   method: 'get',
-      //   url: `http://92.243.9.86/projet-CoachsGaming-back/coach-gaming/public/api/profil/${this.state.slug}}`,
-      // })
-      //   .then((response) => {
-      //     console.log(response);
-          
-      //   })
-      //   .catch((error) => {
-      //     console.log(error);
-      //   });
   
   }
 
