@@ -33,7 +33,8 @@ class Login extends React.Component {
           const responseJSON = result;
           console.log(responseJSON);
           if (responseJSON.data) {
-            sessionStorage.setItem('userData', responseJSON);
+            sessionStorage.setItem('userData', JSON.stringify(responseJSON));
+
             this.setState({
               redirect: true,
               token: responseJSON,

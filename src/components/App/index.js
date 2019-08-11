@@ -11,7 +11,7 @@ import Nav from 'src/containers/NavGaming';
 import Footer from 'src/components/Footer';
 
 import Home from 'src/components/Home';
-import HomeUser from 'src/components/HomeUser';
+import HomeUser from 'src/containers/HomeUser';
 import FormCoach from 'src/components/FormCoach';
 import Login from 'src/components/Login';
 import Game from 'src/containers/Game';
@@ -26,6 +26,7 @@ const App = ({ loading }) => (
       <div id="loading"> Chargement...</div>
     )}
     {!loading && (
+      
       <>
         <Nav />
         <Switch>
