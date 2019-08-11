@@ -5,10 +5,7 @@ import { connect } from 'react-redux';
 // import { withRouter } from 'react-router-dom';
 
 // == Import : local
-import NavGaming from 'src/components/NavGaming';
-import categoriesData from 'src/data/categories';
-import categoriesDataLogged from 'src/data/categoriesLogged';
-
+import HomeUser from 'src/components/HomeUser';
 
 /* === State (données) ===
  * - mapStateToProps retroune un objet de props pour le composant de présentation
@@ -18,11 +15,7 @@ import categoriesDataLogged from 'src/data/categoriesLogged';
  * Pas de data à transmettre ? const mapStateToProps = null;
  */
 const mapStateToProps = (state, ownProps) => ({
-  games: state.games,
-  categories: categoriesData,
-  categoriesLogged: categoriesDataLogged,
   logged: state.logged,
-  
 });
 
 /* === Actions ===
@@ -32,20 +25,22 @@ const mapStateToProps = (state, ownProps) => ({
  *  - ownProps : les props passées au container
  * Pas de disptach à transmettre ? const mapDispatchToProps = {};
  */
-const mapDispatchToProps = {};
+const mapDispatchToProps = {
+    
+};
 
 // Container
-const NavGamingContainer = connect(
+const HomeUserContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(NavGaming);
+)(HomeUser);
 
 // == Export
 // exemple d'utilisation d'un hoc,
 // avant d'exporter mon composant
 // je le passe dans une fonction qui l'enrichit de props
 // export default withRouter(RecipeContainer);
-export default NavGamingContainer;
+export default HomeUserContainer;
 
 /* = export à la volée
 export default connect(

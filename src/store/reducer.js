@@ -5,6 +5,7 @@ const initialState = {
   view: '',
   coachDetail: {},
   loadingCoach: true,
+  logged: false,
 
 };
 
@@ -36,6 +37,7 @@ const reducer = (state = initialState, action = {}) => {
 };
 
 // == Action Creators
+
 export const fetchCoach = () => ({
   type: FETCH_COACH,
 });

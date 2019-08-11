@@ -3,6 +3,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Form, Button, Row, Col, Nav, Alert } from 'react-bootstrap';
 import { NavLink, Redirect } from 'react-router-dom';
+import store from 'src/store';
+import { changeLogged } from 'src/store/reducer';
 
 // == Import : local
 import './login.scss';
@@ -19,6 +21,7 @@ class Login extends React.Component {
     data: '',
   }
 
+
   changeHandler = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   }
@@ -27,7 +30,7 @@ class Login extends React.Component {
     e.preventDefault();
 
     this.setState({ submitted: true });
-    const { username, password  } = this.state;
+    const { username, password } = this.state;
 
     // stop here if form is invalid
     if (!(username && password)) {
@@ -39,16 +42,19 @@ class Login extends React.Component {
         method: 'post',
         url: 'http://92.243.9.86/projet-CoachsGaming-back/coach-gaming/public/login',
         data: this.state,
+        
       })
         .then((result) => {
           const responseJSON = result;
+          console.log(responseJSON);
           if (responseJSON.data) {
             sessionStorage.setItem('userData', JSON.stringify(responseJSON));
+            //fonction qui modifie la propiété "logged" de l'initial state en true;
+            store.dispatch(changeLogged());
             this.setState({
               redirect: true,
               data: responseJSON.data,
             });
-            console.log(this.state.data);
           }
         })
         .catch((error) => {
@@ -70,13 +76,11 @@ class Login extends React.Component {
             {redirect === true && (
             <Redirect to={{
               pathname: '/account',
-              state: { from: PropTypes.location },
             }} />
             )}
             {sessionStorage.getItem('userData') && (
             <Redirect to={{
               pathname: '/account',
-              state: { from: PropTypes.location },
             }} />
             )}
               <Nav className="justify-content-center" variant="pills" defaultActiveKey="/home">
