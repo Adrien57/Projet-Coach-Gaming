@@ -94,7 +94,6 @@ class HomeUser extends React.Component {
 
             <h1> Hello {data.name}</h1>
 
-         
         <button type="button" onClick={this.logout}>logout</button>
       </div>
     );

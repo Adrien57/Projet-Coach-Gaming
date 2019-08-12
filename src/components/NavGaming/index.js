@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 import './nav.scss';
 
-const NavGaming = ({ categories ,categoriesLogged, games, logged }) => (
+const NavGaming = ({ categories ,categoriesLogged, games }) => (
   <Navbar expand="lg" className="navbar">
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">

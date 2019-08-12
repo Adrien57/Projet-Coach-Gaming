@@ -1,7 +1,7 @@
 // == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Form, Button, Row, Col, Nav, Alert } from 'react-bootstrap';
+import { Form, Button, Row, Col, Nav, Alert, Container } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 
@@ -57,7 +57,8 @@ class SignUp extends React.Component {
   render() {
     const { name, lastname, username, age, password, email, error, submitted } = this.state;
     return (
-      <Row className="margin-row form">
+      <Container>
+      <Row className="margin-row form" style={{ marginTop: 50 }}>
         <Col lg={12}>
           <Nav className="justify-content-center form-nav" variant="pills" defaultActiveKey="/home">
             <NavLink to="login">
@@ -73,52 +74,50 @@ class SignUp extends React.Component {
           </Nav>
 
           <Form onSubmit={this.submitHandler}>
-            <Form.Group as={Col} md="12" sm="12">
-              <Form.Label>Nom</Form.Label>
-              <Form.Control type="text" placeholder="Entrez votre nom" value={lastname} onChange={this.changeHandler} name="lastname" />
+            <Form.Row>
+            <Form.Group as={Col} md="6" sm="12">
+              <Form.Control type="text" placeholder="Nom de famille" value={lastname} onChange={this.changeHandler} name="lastname" className="form-input" />
               {submitted && !lastname &&
               <div className="form-input-alert">Veuillez compléter ce champs*</div>}
             </Form.Group>
 
 
-            <Form.Group as={Col} md="12" sm="12">
-              <Form.Label>Prenom</Form.Label>
-              <Form.Control type="text" placeholder="Entrez votre prénom" value={name} onChange={this.changeHandler} name="name" />
-              {submitted && !name &&
+              <Form.Group as={Col} md="6" sm="12">
+              <Form.Control type="text" placeholder="Prénom" value={name} onChange={this.changeHandler} name="name" className="form-input" />
+                {submitted && !name &&
               <div className="form-input-alert">Veuillez compléter ce champs*</div>}
             </Form.Group>
 
             <Form.Group as={Col} md="12" sm="12">
-              <Form.Label>Pseudo</Form.Label>
-              <Form.Control type="text" placeholder="Entrez votre pseudo" value={username} onChange={this.changeHandler} name="username" />
+              <Form.Control type="text" placeholder="Pseudo" value={username} onChange={this.changeHandler} name="username" className="form-input" />
               {submitted && !username &&
               <div className="form-input-alert">Veuillez compléter ce champs*</div>}
             </Form.Group>
 
             <Form.Group as={Col} md="4" sm="8" xs="6">
-              <Form.Label>Age</Form.Label>
-              <Form.Control type="number" placeholder="Entrez votre Age" max="100" min="13" value={age} onChange={this.changeHandler} name="age" />
+              <Form.Control type="number" placeholder="Age" max="100" min="13" value={age} onChange={this.changeHandler} name="age" className="form-input" />
               {submitted && !age &&
               <div className="form-input-alert">Veuillez compléter ce champs*</div>}
             </Form.Group>
 
             <Form.Group as={Col} md="12" sm="12">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" placeholder="Entrez votre mail" value={email} onChange={this.changeHandler} name="email" />
+              <Form.Control type="email" placeholder="Mail" value={email} onChange={this.changeHandler} name="email" className="form-input" />
               {submitted && !email &&
               <div className="form-input-alert">Veuillez compléter ce champs*</div>}
             </Form.Group>
 
             <Form.Group as={Col} md="12" sm="12">
-              <Form.Label>Mot de passe</Form.Label>
-              <Form.Control type="password" placeholder="Entrez votre mot de passe" value={password} onChange={this.changeHandler} name="password" />
+              <Form.Control type="password" placeholder="Mot de passe" value={password} onChange={this.changeHandler} name="password" className="form-input" />
               {submitted && !password &&
               <div className="form-input-alert">Veuillez compléter ce champs*</div>}
             </Form.Group>
 
+            </Form.Row>
+            <div className="button-center">
             <Button variant="primary" type="submit" className="form-button">
             Valider
             </Button>
+            </div>
             {error === true && 
             (
             <p>
@@ -129,6 +128,7 @@ class SignUp extends React.Component {
           </Form>
         </Col>
       </Row>
+      </Container>
     );
   }
 }

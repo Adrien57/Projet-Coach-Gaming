@@ -21,7 +21,9 @@ import SignUp from '../SignUp';
 
 class App extends React.Component {
   
+  componentDidMount() {
 
+  }
 
   render() {
     const { loading } = this.props;
@@ -46,7 +48,7 @@ class App extends React.Component {
       </>
       )}
     </div>
-    )
+    );
   }
 }
 

@@ -1,7 +1,7 @@
 // == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Form, Button, Row, Col, Nav, Alert } from 'react-bootstrap';
+import { Form, Button, Row, Col, Nav, Alert, Container } from 'react-bootstrap';
 import { NavLink, Redirect } from 'react-router-dom';
 import store from 'src/store';
 import { changeLogged } from 'src/store/reducer';
@@ -42,7 +42,6 @@ class Login extends React.Component {
         method: 'post',
         url: 'http://92.243.9.86/projet-CoachsGaming-back/coach-gaming/public/login',
         data: this.state,
-        
       })
         .then((result) => {
           const responseJSON = result;
@@ -70,20 +69,22 @@ class Login extends React.Component {
     const { password, username, redirect, submitted, error } = this.state;
 
     return (
-      
-        <Row className="margin-row form">
-          <Col lg={12}>
+      <Container className="container">
+        <Row className="margin-row form" style={{ marginTop: 50 }}>
+          <Col lg={12} md={12} xs={12}>
             {redirect === true && (
             <Redirect to={{
               pathname: '/account',
             }} />
+            
             )}
             {sessionStorage.getItem('userData') && (
             <Redirect to={{
               pathname: '/account',
             }} />
             )}
-              <Nav className="justify-content-center" variant="pills" defaultActiveKey="/home">
+            
+              <Nav className="justify-content-center form-links" variant="pills" defaultActiveKey="/home">
               <NavLink to="login">
                Connexion
               </NavLink>
@@ -96,21 +97,22 @@ class Login extends React.Component {
               </Nav>
             <Form onSubmit={this.submitHandler}>
               <Form.Group controlId="formBasicEmail">
-                <Form.Label>Entrez votre mail</Form.Label>
-                <Form.Control type="text" placeholder="Enter username" name="username" value={username} onChange={this.changeHandler} />
+                <Form.Control type="text" placeholder="Pseudo" name="username" value={username} onChange={this.changeHandler} className="form-input"/>
+                
                 {submitted && !username &&
                 <div className="form-input-alert">Veuillez compléter ce champs*</div>}
               </Form.Group>
 
               <Form.Group controlId="formBasicPassword">
-                <Form.Label>Entrez votre mot de passe</Form.Label>
-                <Form.Control type="password" placeholder="Password" name="password" value={password} onChange={this.changeHandler} />
+                <Form.Control type="password" placeholder="Mot de passe" name="password" value={password} onChange={this.changeHandler} className="form-input" />
                 {submitted && !password &&
               <div className="form-input-alert">Veuillez compléter ce champs*</div>}
               </Form.Group>
-              <Button variant="primary" type="submit">
+              <div className="button-center">
+              <Button variant="primary" type="submit" onClick={this.redirectToHome} className="form-button">
                 Valider
               </Button>
+              </div>
               {error === true && 
               (
               <p>
@@ -121,6 +123,7 @@ class Login extends React.Component {
             </Form>
           </Col>
         </Row>
+        </Container>
     );
   }
 }
