@@ -1,10 +1,11 @@
 // == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card, Nav, Figure } from 'react-bootstrap';
+import { Card, Nav, Figure, Row,Col,Image } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 // == Import : local
 import './HeaderHome.scss';
+
 
 class HeaderHome extends React.Component {
 
@@ -17,7 +18,7 @@ class HeaderHome extends React.Component {
           <div
             className="gamesList"
             style={{
-              backgroundImage: `url(src/assets/img/coach-bg.jpg)`,
+              backgroundImage: `url(http://conferencing.myvue.com/app/themes/vueconferencing/assets/img/esports-background.jpg)`,
             }}
             >
             <Card.ImgOverlay className="background-overlay gamesList__header ">
@@ -31,8 +32,17 @@ class HeaderHome extends React.Component {
               exact
               to="/Jeux/fifa-19/coachs"
             >
-              <Nav.Item className="gamesList-nav-li" href="/home">
-                Fifa 19
+              <Nav.Item href="/home">
+              <div className="jm-logo">
+                <a href="#">
+                <span> 
+                 <div className="gamesList-nav-li">
+                 FIFA
+                 </div>
+                 </span>
+                </a>
+                </div>
+                
               </Nav.Item>
             </NavLink>
               
@@ -40,8 +50,16 @@ class HeaderHome extends React.Component {
               exact
               to="/Jeux/overwatch/coachs"
             >
-              <Nav.Item className="gamesList-nav-li" href="/home">
-                overwatch
+              <Nav.Item  href="/home">
+              <div className="jm-logo">
+                <a href="#">
+                <span> 
+                <div className="gamesList-nav-li">
+                Overwatch
+                 </div>
+                 </span>
+                </a>
+                </div>
               </Nav.Item>
             </NavLink>
 
@@ -49,8 +67,16 @@ class HeaderHome extends React.Component {
               exact
               to="/Jeux/pubg/coachs"
             >
-              <Nav.Item className="gamesList-nav-li" href="/home">
-              PUBG
+              <Nav.Item href="/home">
+              <div className="jm-logo">
+                <a href="#">
+                <span> 
+                <div className="gamesList-nav-li">
+                Pubg
+                 </div>
+                 </span>
+                </a>
+                </div>
               </Nav.Item>
             </NavLink>
 
@@ -58,8 +84,16 @@ class HeaderHome extends React.Component {
               exact
               to="/Jeux/super-smash-bros-ultimate/coachs"
             >
-              <Nav.Item className="gamesList-nav-li" href="/home">
-              SSBU
+              <Nav.Item href="/home">
+              <div className="jm-logo">
+                <a href="#">
+                <span> 
+                <div className="gamesList-nav-li">
+                Ssbu
+                 </div>
+                 </span>
+                </a>
+                </div>
               </Nav.Item>
             </NavLink>
           </Nav>

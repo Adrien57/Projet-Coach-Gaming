@@ -31,41 +31,32 @@ class Reviews extends React.Component {
     render() {
       return (
         <Row className="margin-row reviews">
-        <h2 className="reviews-title">Ce que pensent les élèves</h2>
+          <h2 className="reviews-title">Ils ont déjà commencé</h2>
           <Col lg={12}>
             <Card.Body className="text-center">
               <CardDeck className="reviews-cardDeck">
               
                 {this.state.reviews.map((review) => {
-                return (
-                  <Col key={review.id} xs={12} md={12} lg={4}>
-                      <Card className="reviews-cardDeck__card" >
-                      <Figure>
-                        <Figure.Image className="reviews-cardeck__card__image"
-                        alt="50x50"
-                        src={review.user.avatar}
-                        />
+                  return (
+                    <Col key={review.id} xs={12} md={12} lg={4}>
+                      <Card className="reviews-cardDeck__card">
                         <Card.Title>
-                        <div>
-                          {review.user.username}
-                        </div>
-                        
-                        <Rater total={5} rating={review.rating} interactive={false} />
-                        
-                         </Card.Title>
+                          <div>
+                            {review.user.username}
+                          </div>
+                          <Rater total={5} rating={review.rating} interactive={false} />
+                        </Card.Title>
                         <Card.Text>
-                        {review.comment}
+                          {review.comment}
                         </Card.Text>
                         <Card.Footer className="text-muted">
                         Avis sur {review.info_coach.user.username}
                         </Card.Footer>
-                      </Figure>
                       </Card>
                     </Col>
-                );
-              })}
-                </CardDeck>
-                
+                  );
+                })}
+              </CardDeck>  
             </Card.Body>
           </Col>
         </Row>
