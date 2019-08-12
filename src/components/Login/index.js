@@ -110,6 +110,7 @@ class Login extends React.Component {
               </Form.Row>
               <div className="button-center">
               <Button variant="primary" type="submit" onClick={this.redirectToHome} className="form-button">
+                
                 Valider
               </Button>
               </div>

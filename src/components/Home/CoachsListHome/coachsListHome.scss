@@ -27,5 +27,12 @@
   }
 }
 .card-deck .card{
-  margin: 10px 20px;
+  margin-bottom: 15px;
+}
+@media (min-width: 576px){
+  .card-deck .card {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
 }

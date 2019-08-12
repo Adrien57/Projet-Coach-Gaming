@@ -1,0 +1,21 @@
+.description-reviews{
+  text-align: center;
+  color: #fff;
+
+  &-card{
+    white-space: nowrap; 
+    width: 60%;
+    margin: auto;
+    color: black;
+  }
+  
+}
+.react-rater-star.is-active{
+  color: #ffc107;
+}
+
+// white-space: nowrap; 
+// width: 100px; 
+// overflow: hidden;
+// text-overflow: ellipsis; 
+// border: 1px solid #000000;

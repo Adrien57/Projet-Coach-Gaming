@@ -6,10 +6,11 @@ import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import { IconContext } from "react-icons";
 import { IoIosStar } from 'react-icons/io';
+import Rater from 'react-rater';
 
 // == Import : local
 import './reviews.scss';
-import Rater from 'react-rater';
+
 
 class Reviews extends React.Component {
     state= {
@@ -35,31 +36,25 @@ class Reviews extends React.Component {
           <Col lg={12}>
             <Card.Body className="text-center">
               <CardDeck className="reviews-cardDeck">
-              
                 {this.state.reviews.map((review) => {
+
                 return (
                   <Col key={review.id} xs={12} md={12} lg={4}>
-                      <Card className="reviews-cardDeck__card" >
-                      <Figure>
-                        <Figure.Image className="reviews-cardeck__card__image"
-                        alt="50x50"
-                        src={review.user.avatar}
-                        />
+                      <Card className="reviews-cardDeck" >
                         <Card.Title>
                         <div>
                           {review.user.username}
                         </div>
-                        
                         <Rater total={5} rating={review.rating} interactive={false} />
-                        
                          </Card.Title>
-                        <Card.Text>
+                        <Card.Text className="text-limit">
+                        <div className="text-truncate">
                         {review.comment}
+                        </div>
                         </Card.Text>
                         <Card.Footer className="text-muted">
                         Avis sur {review.info_coach.user.username}
                         </Card.Footer>
-                      </Figure>
                       </Card>
                     </Col>
                 );

@@ -40,11 +40,12 @@
     height: 40px;
     background-color: #1a243c;
     border-color: #1a243c; 
+    font-weight: bold;
   }
   &-button:hover{
-    background-color: #5d6a8a;
+    background-color: #fff;
+    color: #1a243c;
   }
-
 }
 .button-center{
   text-align: center;

@@ -52,12 +52,12 @@ class CoachDetail extends React.Component {
         <div><h2>Chargement</h2></div>
         )}
         {!loadingCoach && (
-          <React.Fragment>
+          <div className="coach_detail">
             <CoachCard coachDetail={coachDetail} />
-            <CoachDescription />
+            <CoachDescription description={coachDetail} />
             <CoachPalmares />
-            <CoachComment />
-          </React.Fragment>
+            <CoachComment comment={coachDetail} />
+          </div>
         )}
       </div>
     );

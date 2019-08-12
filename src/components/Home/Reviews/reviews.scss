@@ -3,15 +3,14 @@
   background-color: #06264e8a;
 
   &-cardDeck{
-    width: 60%;
+    width: 70%;
     margin: auto;
     color:black;
-    &__card{
-      background-color:#345482;
-    }
-    
-    
+    white-space: nowrap; 
+    padding: 1em;
+
   }
+
 
   &-title{
     margin: auto;
@@ -23,4 +22,9 @@
 .text-muted{
   border-color: white;
 }
-
+.text-truncate{
+  
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

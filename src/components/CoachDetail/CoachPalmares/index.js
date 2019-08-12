@@ -16,7 +16,7 @@ class CoachPalmares extends React.Component {
 
   render() {
     return (
-      <Row className="palmares">
+      <Row className="details-row palmares">
         <Col xs={12} md={12}>
           <h2> Palmarès </h2>
           <Row>

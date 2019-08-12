@@ -1,0 +1,33 @@
+.detail{
+  background-color: rgb(27, 47, 71);
+  color: #fff;
+
+  &-username{
+    text-align: center;
+  }
+
+  &-row{
+    width: 60%;
+    margin: auto;
+  }
+
+  &-logo-text{
+    color: #fff;
+  }
+  &-price{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right;
+  }
+  &-button{
+    width: 100px;
+    height: 40px;
+    background-color: #1a243c;
+    border-color: #1a243c; 
+    font-weight: bold;
+  }
+  &-button:hover{
+    background-color: #fff;
+    color: #1a243c;
+  }
+}

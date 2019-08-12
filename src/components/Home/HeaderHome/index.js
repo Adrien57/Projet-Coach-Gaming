@@ -17,7 +17,7 @@ class HeaderHome extends React.Component {
           <div
             className="gamesList"
             style={{
-              backgroundImage: `url(src/assets/img/coach-bg.jpg)`,
+              backgroundImage: `url(http://conferencing.myvue.com/app/themes/vueconferencing/assets/img/esports-background.jpg)`,
             }}
             >
             <Card.ImgOverlay className="background-overlay gamesList__header ">
