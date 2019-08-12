@@ -15,6 +15,7 @@ export const FETCH_COACH = 'FETCH_COACH';
 const RECEIVE_GAMES = 'RECEIVE_GAMES';
 const RECEIVE_COACH = 'RECEIVE_COACH';
 
+
 // == Reducer
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {

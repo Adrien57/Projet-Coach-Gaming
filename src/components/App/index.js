@@ -21,7 +21,7 @@ import SignUp from '../SignUp';
 
 class App extends React.Component {
   
-  componentDidMount() {
+  componentDidMount(){
 
   }
 
@@ -31,8 +31,9 @@ class App extends React.Component {
     <div id="app">
       {loading && (
       <div id="loading"> Chargement...</div>
-      )}
-      {!loading && (
+    )}
+    {!loading && (
+      
       <>
         <Nav />
         <Switch>

@@ -5,11 +5,9 @@ import { Form, Button, Row, Col, Nav, Alert, Container } from 'react-bootstrap';
 import { NavLink, Redirect } from 'react-router-dom';
 import store from 'src/store';
 import { changeLogged } from 'src/store/reducer';
-
 // == Import : local
 import './login.scss';
 import axios from 'axios';
-
 class Login extends React.Component {
 
   state = {
@@ -127,7 +125,5 @@ class Login extends React.Component {
     );
   }
 }
-
-
 // == Export
 export default Login;
