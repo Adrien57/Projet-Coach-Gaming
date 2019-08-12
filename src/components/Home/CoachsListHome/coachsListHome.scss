@@ -1,6 +1,13 @@
 .home-title{
   color: #fff;
   margin: auto;
+  text-align: center;
+  &-description{
+    color:white;
+    text-align: center;
+    font-size: 1.2em;
+    padding-top:0.5em;
+  }
 }
 
 .home-cardDeck{
@@ -12,11 +19,17 @@
   }
   &-picture{
     margin: auto;
+    padding:0.8em 0;
   }
   &-rating{
-    font-size: 15px;
+    font-size: 1.5em;
     font-weight: bold;
     letter-spacing: 0.1em;
+    color:white;
+    span{
+      font-size: 0.7em;
+      font-weight: normal;
+    }
   }
   &-price{
     font-weight: bold;
@@ -24,10 +37,20 @@
   }
   &-name{
     text-transform: uppercase;
+    float:left;
+
   }
-}
-.card-deck .card{
-  margin-bottom: 15px;
+  &-price{
+    float:right
+  }
+  &-button{
+    margin-top: 1.4em;
+    
+    
+  }
+  a:hover{
+    text-decoration: none;
+  }
 }
 @media (min-width: 576px){
   .card-deck .card {

@@ -1,1 +1,64 @@
+.coachlist{
+    width: 70%;
+    margin: auto;
+}
+
+.home-title{
+  color: #fff;
+  margin: auto;
+  text-align: center;
+  &-description{
+    color:white;
+    text-align: center;
+    padding-top:0.5em;
+  }
+}
+
+.home-cardDeck{
+  text-align: center;
+  width: 60%;
+  margin: auto;
+  &-coach{
+    width: 90%;
+    margin-bottom:1.2em;
+  }
+  &-picture{
+    margin: auto;
+    padding:0.8em 0;
+  }
+  &-rating{
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    color:white;
+    span{
+      font-size: 0.7em;
+      font-weight: normal;
+    }
+  }
+  &-price{
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+  &-name{
+    text-transform: uppercase;
+    float:left;
+
+  }
+  &-price{
+    float:right
+  }
+  &-button{
+    margin-top: 1.4em;
+    
+    
+  }
+  a:hover{
+    text-decoration: none;
+  }
+}
+.card-deck .card{
+  margin-bottom: 15px;
+}
 

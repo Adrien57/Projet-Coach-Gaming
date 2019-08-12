@@ -32,7 +32,7 @@ class Reviews extends React.Component {
     render() {
       return (
         <Row className="margin-row reviews">
-        <h2 className="reviews-title">Ce que pensent les élèves</h2>
+          <h2 className="reviews-title">Ils ont déjà commencé</h2>
           <Col lg={12}>
             <Card.Body className="text-center">
               <CardDeck className="reviews-cardDeck">
@@ -57,10 +57,9 @@ class Reviews extends React.Component {
                         </Card.Footer>
                       </Card>
                     </Col>
-                );
-              })}
-                </CardDeck>
-                
+                  );
+                })}
+              </CardDeck>  
             </Card.Body>
           </Col>
         </Row>

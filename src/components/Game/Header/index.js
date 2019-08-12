@@ -39,41 +39,78 @@ const Header = (props) => {
           <Card.Text>
           {description}
           </Card.Text>
-          <Card.Text>Last updated 3 mins ago</Card.Text>
+          <Card.Text></Card.Text>
         </Card.ImgOverlay>
         </div>
-        <Nav className="justify-content-center gamesList-nav" activeKey="/home">
+        <Nav className="justify-content-center gamesList-nav">
             
-          <NavLink
-            exact
-            to="/Jeux/fifa-19/coachs"
-            activeClassName="selected"
+        <NavLink
+              exact
+              to="/Jeux/fifa-19/coachs"
             >
-              <Nav.Item className="gamesList-nav-li" href="/home">Fifa 19</Nav.Item>
+              <Nav.Item href="/home">
+              <div className="jm-logo">
+                <a href="#">
+                <span> 
+                 <div className="gamesList-nav-li">
+                 FIFA
+                 </div>
+                 </span>
+                </a>
+                </div>
+                
+              </Nav.Item>
             </NavLink>
               
             <NavLink
               exact
               to="/Jeux/overwatch/coachs"
-              activeClassName="selected"
             >
-              <Nav.Item className="gamesList-nav-li" href="/home">Overwatch</Nav.Item>
+              <Nav.Item  href="/home">
+              <div className="jm-logo">
+                <a href="#">
+                <span> 
+                <div className="gamesList-nav-li">
+                Overwatch
+                 </div>
+                 </span>
+                </a>
+                </div>
+              </Nav.Item>
             </NavLink>
 
             <NavLink
               exact
               to="/Jeux/pubg/coachs"
-              activeClassName="selected"
             >
-              <Nav.Item className="gamesList-nav-li" href="/home">Pubg</Nav.Item>
+              <Nav.Item href="/home">
+              <div className="jm-logo">
+                <a href="#">
+                <span> 
+                <div className="gamesList-nav-li">
+                Pubg
+                 </div>
+                 </span>
+                </a>
+                </div>
+              </Nav.Item>
             </NavLink>
 
             <NavLink
               exact
               to="/Jeux/super-smash-bros-ultimate/coachs"
-              activeClassName="selected"
             >
-              <Nav.Item className="gamesList-nav-li" href="/home">SSBU</Nav.Item>
+              <Nav.Item href="/home">
+              <div className="jm-logo">
+                <a href="#">
+                <span> 
+                <div className="gamesList-nav-li">
+                Ssbu
+                 </div>
+                 </span>
+                </a>
+                </div>
+              </Nav.Item>
             </NavLink>
           </Nav>
       </Card>

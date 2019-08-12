@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import { Card, Button, Figure, Row, Col, CardDeck } from 'react-bootstrap';
-
+import Rater from 'react-rater';
 // == Import : local
 import './coachsList.scss';
 
@@ -11,42 +11,44 @@ const CoachsList = ({ coachs }) => {
 
 
   return (
-    <Row>
+    <Row className="margin-row coachlist">
       {coachs.map((coach) => {
 
         return (
-          <Col key={coach.id} xs={6} md={4}>
-            <CardDeck>
-            <Card bg="dark" text="white" border="info">
-                  <Figure>
-                    <Figure.Image
-                      width={171}
-                      height={180}
-                      alt="171x180"
-                      src=""
-                      roundedCircle
-                    />
-                    <Figure.Caption>
-                      {coach.team.name}
-                    </Figure.Caption>
-                  </Figure>
-                  <Card.Title>{coach.user.username}</Card.Title>
+         
+          <Col key={coach.id} lg={12} md={6} lg={3}>
+                  <Card key={coach.id} bg="dark" text="white" border="secondary" className="home-cardDeck-coach">
+                    <Figure className="home-cardDeck-picture">
+                      <Figure.Image
+                        className="coach-card--image"
+                        width={171}
+                        height={180}
+                        alt="171x180"
+                        src={coach.user.avatar}
+                        roundedCircle
+                      />
+                      <Figure.Caption className="home-cardDeck-rating">
+                      {coach.user.username} <br></br>
+                     <span>Team : {coach.team.name}</span> 
+                        
+                        
+                      </Figure.Caption>
+                    </Figure>
                   <Card.Body>
-                    <Card.Title>{coach.user.username}</Card.Title>
+                    <Card.Title className="home-cardDeck-name">
+                      <Rater total={5} rating={coach.rating} interactive={false}
+                        />
+                      </Card.Title>
                     <Card.Text>
-                      {coach.team.name}
+                    <p className="home-cardDeck-price">{coach.price} &euro; / h</p>
                     </Card.Text>
+                    <NavLink to={`/jeux/:slug/coachs/${coach.user.slug}`}>
+                    
+                    <Button className="home-cardDeck-button" variant="danger" size="lg" block>Voir le profil</Button>
+                    </NavLink>
                   </Card.Body>
-                  <Card.Footer>
-                    <NavLink to={`coachs/${coach.user.slug}`}>
-                    <Button>
-                       Voir le profil
-                    </Button>
-                  </NavLink>
-                  </Card.Footer>
                 </Card>
-          </CardDeck>
-          </Col>
+                </Col>
             );
             })}
 

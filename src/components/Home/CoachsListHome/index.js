@@ -33,14 +33,18 @@ class CoachsListHome extends React.Component {
   render() {
     return (
       <Row className="margin-row ">
-      <h2 className="home-title"> Choisis ton coach </h2>
+      <Col>
+      <h2 className="home-title">Nos Meilleurs Coachs</h2>
+
+        <p className="home-title-description">Nos coachs sont issus de la scène eSport. Ils sont tous évalués en amont par nos sélectionneurs pour valider leurs compétences pédagogiques et techniques.</p>
+      </Col>
         <Col lg={12}>
         <Card.Body>
           <CardDeck className="home-cardDeck">
             {this.state.bestCoachs.map(( coach ) => {
               return (
                 <Col key={coach.id} xs={12} md={6} lg={4}>
-                  <Card key={coach.id} bg="dark" text="white" border="info" className="home-cardDeck-coach">
+                  <Card key={coach.id} bg="dark" text="white" border="secondary" className="home-cardDeck-coach">
                     <Figure className="home-cardDeck-picture">
                       <Figure.Image
                         className="coach-card--image"
@@ -51,20 +55,23 @@ class CoachsListHome extends React.Component {
                         roundedCircle
                       />
                       <Figure.Caption className="home-cardDeck-rating">
-                        <Rater total={5} rating={coach.rating} interactive={false}
-                        />
-                        {/* <IconContext.Provider value={{ color: "rgb(230, 230, 142)", size:"1.2em" }}>
+                      {coach.user.username} <br></br>
+                     <span>Team : {coach.team.name}</span> 
                         
-                        </IconContext.Provider> */}
+                        
                       </Figure.Caption>
                     </Figure>
                   <Card.Body>
-                    <Card.Title className="home-cardDeck-name">{coach.user.username}</Card.Title>
+                    <Card.Title className="home-cardDeck-name">
+                      <Rater total={5} rating={coach.rating} interactive={false}
+                        />
+                      </Card.Title>
                     <Card.Text>
                     <p className="home-cardDeck-price">{coach.price} &euro; / h</p>
                     </Card.Text>
                     <NavLink to={`/jeux/:slug/coachs/${coach.user.slug}`}>
-                    <Button variant="primary">Voir profil</Button>
+                    
+                    <Button className="home-cardDeck-button" variant="danger" size="lg" block>Voir le profil</Button>
                     </NavLink>
                   </Card.Body>
                 </Card>
