@@ -94,18 +94,20 @@ class Login extends React.Component {
               </Nav.Item>
               </Nav>
             <Form onSubmit={this.submitHandler}>
-              <Form.Group controlId="formBasicEmail">
+            <Form.Row>
+              <Form.Group as={Col} md="12" sm="12" controlId="formBasicEmail">
                 <Form.Control type="text" placeholder="Pseudo" name="username" value={username} onChange={this.changeHandler} className="form-input"/>
                 
                 {submitted && !username &&
                 <div className="form-input-alert">Veuillez compléter ce champs*</div>}
-              </Form.Group>
+                </Form.Group>
 
-              <Form.Group controlId="formBasicPassword">
+              <Form.Group as={Col} md="12" sm="12" controlId="formBasicPassword">
                 <Form.Control type="password" placeholder="Mot de passe" name="password" value={password} onChange={this.changeHandler} className="form-input" />
                 {submitted && !password &&
               <div className="form-input-alert">Veuillez compléter ce champs*</div>}
               </Form.Group>
+              </Form.Row>
               <div className="button-center">
               <Button variant="primary" type="submit" onClick={this.redirectToHome} className="form-button">
                 Valider
