@@ -115,6 +115,7 @@ class HomeUser extends React.Component {
                             </div>
                             <hr />
 
+<<<<<<< HEAD
                             <div className="row">
                               <div className="col-sm-3 col-md-2 col-5">
                                 <label>Prenom</label>
@@ -162,6 +163,12 @@ class HomeUser extends React.Component {
           </div>
         </Col>
       </Row>
+=======
+      <div>
+            <h1> Hello {data.name}</h1>
+        <button type="button" onClick={this.logout}>logout</button>
+      </div>
+>>>>>>> master
     );
   }
 }

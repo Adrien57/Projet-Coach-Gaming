@@ -1,7 +1,7 @@
 // == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card, Nav } from 'react-bootstrap';
+import { Card, Nav, Figure } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 // == Import : local
 import './HeaderHome.scss';
@@ -13,7 +13,7 @@ class HeaderHome extends React.Component {
 
   render() {
     return (
-        <Card className="bg-dark text-white header-bg">
+      <Card className="bg-dark text-white header-bg">
           <div
             className="gamesList"
             style={{
@@ -31,28 +31,36 @@ class HeaderHome extends React.Component {
               exact
               to="/Jeux/fifa-19/coachs"
             >
-              <Nav.Item className="gamesList-nav-li" href="/home">Fifa 19</Nav.Item>
+              <Nav.Item className="gamesList-nav-li" href="/home">
+                Fifa 19
+              </Nav.Item>
             </NavLink>
               
             <NavLink
               exact
               to="/Jeux/overwatch/coachs"
             >
-              <Nav.Item className="gamesList-nav-li" href="/home">Overwatch</Nav.Item>
+              <Nav.Item className="gamesList-nav-li" href="/home">
+                overwatch
+              </Nav.Item>
             </NavLink>
 
             <NavLink
               exact
               to="/Jeux/pubg/coachs"
             >
-              <Nav.Item className="gamesList-nav-li" href="/home">Pubg</Nav.Item>
+              <Nav.Item className="gamesList-nav-li" href="/home">
+              PUBG
+              </Nav.Item>
             </NavLink>
 
             <NavLink
               exact
               to="/Jeux/super-smash-bros-ultimate/coachs"
             >
-              <Nav.Item className="gamesList-nav-li" href="/home">SSBU</Nav.Item>
+              <Nav.Item className="gamesList-nav-li" href="/home">
+              SSBU
+              </Nav.Item>
             </NavLink>
           </Nav>
         </Card>
