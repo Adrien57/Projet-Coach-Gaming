@@ -37,16 +37,5 @@ const GameContainer = connect(
   mapDispatchToProps,
 )(Game);
 
-// == Export
-// exemple d'utilisation d'un hoc,
-// avant d'exporter mon composant
-// je le passe dans une fonction qui l'enrichit de props
-// export default withRouter(RecipeContainer);
-export default GameContainer;
 
-/* = export à la volée
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Example);
-*/
+export default GameContainer;

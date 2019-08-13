@@ -91,3 +91,13 @@
 .rules-container{
   margin-top:3em;
 }
+@media (max-width: 576px){
+  .img-center{
+    text-align: center;
+  }
+  .rules__image{
+    
+    width: 80%;
+    
+  }
+}
