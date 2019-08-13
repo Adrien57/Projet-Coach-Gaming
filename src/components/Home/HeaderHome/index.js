@@ -31,6 +31,7 @@ class HeaderHome extends React.Component {
             <NavLink
               exact
               to="/Jeux/fifa-19/coachs"
+              
             >
               <Nav.Item href="/home">
               <div className="jm-logo">

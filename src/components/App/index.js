@@ -14,23 +14,20 @@ import Home from 'src/components/Home';
 import HomeUser from 'src/containers/HomeUser';
 import EditProfil from 'src/components/EditProfil';
 import FormCoach from 'src/components/FormCoach';
-import Login from 'src/containers/Login';
+import Login from 'src/components/Login';
 import Game from 'src/containers/Game';
 import CoachDetail from 'src/containers/CoachDetail';
 import SignUp from '../SignUp';
+import WhoAreWe from '../WhoAreWe';
+import Page404 from '../Page404';
 
+const App = ({ loading }) => (
 
-class App extends React.Component {
-
-  render() {
-    const { loading } = this.props;
-    return (
-    <div id="app">
-      {loading && (
+  <div id="app">
+    {loading && (
       <div id="loading"> Chargement...</div>
     )}
     {!loading && (
-      
       <>
         <Nav />
         <Switch>
@@ -42,14 +39,14 @@ class App extends React.Component {
           <Route path="/jeux/:slug/coachs/:slugcoach" exact component={CoachDetail} />
           <Route path="/auth/login" exact component={Login} />
           <Route path="/auth/signup" exact component={SignUp} />
+          <Route path="/qui-sommes-nous" exact component={WhoAreWe} />
+          <Route component={Page404} />
         </Switch>
         <Footer />
       </>
-      )}
-    </div>
-    );
-  }
-}
+    )}
+  </div>
+);
 
 App.propTypes = {
   loading: PropTypes.bool.isRequired,

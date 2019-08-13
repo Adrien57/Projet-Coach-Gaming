@@ -40,7 +40,7 @@ class Reviews extends React.Component {
 
                 return (
                   <Col key={review.id} xs={12} md={12} lg={4}>
-                      <Card className="reviews-cardDeck" >
+                      <Card className="reviews-cardDeck cardborder" >
                         <Card.Title>
                         <div>
                           {review.user.username}

@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+
+.whoarewe{
+ 
+}
+
+.no-padding{
+  padding-left: 0;
+  padding-right: 0;
+}
+.banniere{
+  background-color: #26262B;
+  background-repeat: no-repeat;
+  text-align: center;
+  margin-bottom: 0;
+  &__title{
+    text-align: center;
+  }
+  &__description{
+    margin-top:1.2em;
+    color:white;
+    width: 60%;
+    margin:0 auto;
+    padding-top: 1.8em;
+    font-size: 1.4em;
+  }
+}
+.center-element{
+  width: 60%;
+  margin: 0 auto;
+}
+.why{
+  background-color:#F9F9F9;
+  background-repeat: no-repeat;
+  margin-bottom: 0;
+  display:flex;
+  padding-right:0;
+  
+  &__image{
+    padding:2em;
+  }
+
+  &__title{
+  text-align: center;
+  padding-bottom: 2em;
+  color:#1B2F47;
+  }
+  &__description{
+    font-size: 1.2em;
+    line-height: 1.7em;
+  }
+  &__container{
+    margin:3em;
+  }
+  
+}
+@media (max-width: 576px){
+  .img-center{
+    text-align: center;
+  }
+  .why__image{
+    
+    width: 80%;
+    
+  }
+}
+
+.rules{
+  background-color: #E1EBF5;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  
+  &__image{
+    box-shadow: #E1EBF5;;
+  }
+  &__title{
+    color:red;
+    text-align:center;
+  }
+  &__description{
+    font-size:1.2em;
+    padding-top: 2em;
+    line-height: 1.7em;
+    text-align: center;
+  }
+}
+.rules-center-element{
+  width:80%;
+  margin: 0 auto;
+}
+.rules-container{
+  margin-top:3em;
+}
