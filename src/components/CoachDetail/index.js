@@ -55,7 +55,7 @@ class CoachDetail extends React.Component {
           <div className="coach_detail">
             <CoachCard coachDetail={coachDetail} />
             <CoachDescription description={coachDetail} />
-            <CoachPalmares />
+            <CoachPalmares palmares={coachDetail} />
             <CoachComment comment={coachDetail} />
           </div>
         )}

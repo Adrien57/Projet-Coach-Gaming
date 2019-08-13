@@ -1,7 +1,7 @@
 // == Import : npm
 import React from 'react';
-import { Redirect } from 'react-router-dom';
-import { Row, Col, Button } from 'react-bootstrap';
+import { Redirect, NavLink } from 'react-router-dom';
+import { Row, Col, Button, Nav, Container } from 'react-bootstrap';
 import axios from 'axios';
 
 // == Import : local
@@ -22,6 +22,7 @@ class HomeUser extends React.Component {
   componentDidMount() {
     if (sessionStorage.getItem('userData')) {
       // on recoit bien le token 
+      
       this.getUserData();
     }
     else {
@@ -75,7 +76,21 @@ class HomeUser extends React.Component {
     }
     
     return (
+      <Container>
+        <Nav className="form-nav" variant="pills" defaultActiveKey="/home">
+          <NavLink to="/account">
+               Profil
+          </NavLink>
+              
+            <span>/</span>
+          <Nav.Item>
+              <NavLink to="/account/edit">
+                  Modifier
+              </NavLink>
+          </Nav.Item>
+        </Nav>
       <Row>
+
         <Col>
           <div className="container">
             <div className="row">
@@ -84,9 +99,6 @@ class HomeUser extends React.Component {
                   <div className="card-body">
                     <div className="card-title mb-4">
                       <div className="d-flex justify-content-start">
-                        <div className="image-container">
-                          <img src={data.avatar} id="imgProfile" className="img-thumbnail" />
-                        </div>
                         <div className="userData ml-3">
                           <h2 className="d-block title"> Profil de  {data.name}</h2>
                           <Button className="logout" onClick={this.logout} variant="outline-danger">Se déconnecter</Button>
@@ -162,6 +174,7 @@ class HomeUser extends React.Component {
           </div>
         </Col>
       </Row>
+      </Container>
     );
   }
 }

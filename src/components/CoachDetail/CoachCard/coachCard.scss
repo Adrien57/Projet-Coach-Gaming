@@ -1,6 +1,9 @@
 .detail{
   background-color: rgb(27, 47, 71);
   color: #fff;
+    // background-image: url('https://wallpaperaccess.com/full/407236.png');
+  // background-size: cover;
+  // background-position:center;
 
   &-username{
     text-align: center;
@@ -31,3 +34,25 @@
     color: #1a243c;
   }
 }
+@media (max-width: 576px) { 
+  .detail-team{
+    text-align: center;
+  }
+  .detail-price{
+    text-align: center;
+  }
+  .social{
+    font-size: 10px;
+    justify-content: center;
+  }
+  .detail-figure{
+    text-align: center;
+  }
+}
+@media (max-width: 768px) { 
+
+  .detail-figure{
+    text-align: center;
+  }
+ }
+

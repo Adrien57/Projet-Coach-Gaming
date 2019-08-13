@@ -12,6 +12,7 @@ import Footer from 'src/components/Footer';
 
 import Home from 'src/components/Home';
 import HomeUser from 'src/containers/HomeUser';
+import EditProfil from 'src/components/EditProfil';
 import FormCoach from 'src/components/FormCoach';
 import Login from 'src/containers/Login';
 import Game from 'src/containers/Game';
@@ -20,10 +21,6 @@ import SignUp from '../SignUp';
 
 
 class App extends React.Component {
-  
-  componentDidMount(){
-
-  }
 
   render() {
     const { loading } = this.props;
@@ -39,6 +36,7 @@ class App extends React.Component {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/account" exact component={HomeUser} />
+          <Route path="/account/edit" exact component={EditProfil} />
           <Route path="/jeux/:slug/coachs" exact component={Game} />
           <Route path="/devenir-coach" exact component={FormCoach} />
           <Route path="/jeux/:slug/coachs/:slugcoach" exact component={CoachDetail} />

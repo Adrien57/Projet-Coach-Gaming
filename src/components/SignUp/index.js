@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Form, Button, Row, Col, Nav, Alert, Container } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
 import axios from 'axios';
 
 // == Import : local
@@ -19,7 +19,7 @@ class SignUp extends React.Component {
     email: '',
     submitted: false,
     error: false,
-    
+    redirect: false,
   }
 
   changeHandler = e => {
@@ -44,10 +44,14 @@ class SignUp extends React.Component {
     })
       .then((response) => {
         console.log(response);
+        this.setState({
+          redirect: true,
+        })
       })
       .catch((error) => {
         this.setState({
           error: true,
+         
         });
         console.log(error);
       });
@@ -55,11 +59,17 @@ class SignUp extends React.Component {
 
 
   render() {
-    const { name, lastname, username, age, password, email, error, submitted } = this.state;
+    const { name, lastname, username, age, password, email, error, submitted, redirect } = this.state;
     return (
       <Container>
       <Row className="margin-row form" style={{ marginTop: 50 }}>
         <Col lg={12}>
+        {redirect === true && (
+          <Redirect to={{
+              pathname: '/auth/login',
+          }} />
+        )}
+
           <Nav className="justify-content-center form-nav" variant="pills" defaultActiveKey="/home">
             <NavLink to="login">
                Connexion

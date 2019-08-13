@@ -15,30 +15,32 @@ class CoachCard extends React.Component {
   render() {
     const { coachDetail } = this.props;
     return (
-      <Col lg={12} >
+      <Col lg={12} sm={12} >
       <Jumbotron className="detail">
         <Row className="detail-row">
-          <Col md={4} xs={12}>
+          <Col md={4} sm={12} xs={12} className="detail-figure">
             <Figure>
               <Figure.Image
                 width={171}
                 height={180}
                 alt="171x180"
                 src={coachDetail.user.avatar}
+                rounded
                 />
                 <Figure.Caption className="detail-username">
                   <h3>{coachDetail.user.username}</h3>
                 </Figure.Caption>
             </Figure>
           </Col>
-          <Col md={4} xs={6}>
+          <Col md={4} sm={6} xs={12} className="detail-team">
           <h3>Team</h3>
           <p>
-          <Figure>
+          <Figure >
             <Figure.Image
                 width={50}
                 alt="171x180"
                 src={coachDetail.team.logo}
+                rounded
                 />
                 <Figure.Caption>
                   <h4 className="detail-logo-text">{coachDetail.team.name}</h4>
@@ -46,8 +48,9 @@ class CoachCard extends React.Component {
             </Figure>
             
           </p>
+          <div className="social">
           <h3>Réseaux sociaux</h3>
-          <Nav defaultActiveKey="/home" as="ul">
+          <Nav as="ul" >
             <Nav.Item as="li">
               <Nav.Link href={coachDetail.facebook}><FaFacebookF size="1.5em" /></Nav.Link>
             </Nav.Item>
@@ -61,8 +64,10 @@ class CoachCard extends React.Component {
               <Nav.Link href={coachDetail.twitch}><FaTwitch size="1.5em" /></Nav.Link>
             </Nav.Item>
           </Nav>
+          </div>
           </Col>
-          <Col md={4} xs={6} className="detail-price">
+          <Col md={4} sm={6} xs={12} className="detail-price">
+          
           <h2>Tarif</h2>
           <p>
             {coachDetail.price} &euro; / H

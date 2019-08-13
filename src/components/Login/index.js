@@ -9,17 +9,16 @@ import { changeLogged } from 'src/store/reducer';
 import './login.scss';
 import axios from 'axios';
 class Login extends React.Component {
-
   state = {
-    password: '',
-    username: '',
-    redirect: false,
-    submitted: false,
-    error: false,
-    data: '',
+      password: '',
+      username: '',
+      redirect: false,
+      submitted: false,
+      error: false,
+      data: '',
   }
 
-
+  
   changeHandler = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   }
@@ -65,7 +64,6 @@ class Login extends React.Component {
 
   render() {
     const { password, username, redirect, submitted, error } = this.state;
-
     return (
       <Container className="container">
         <Row className="margin-row form" style={{ marginTop: 50 }}>
@@ -109,7 +107,7 @@ class Login extends React.Component {
               </Form.Group>
               </Form.Row>
               <div className="button-center">
-              <Button variant="primary" type="submit" onClick={this.redirectToHome} className="form-button">
+              <Button variant="primary" type="submit" className="form-button">
                 
                 Valider
               </Button>
@@ -128,5 +126,6 @@ class Login extends React.Component {
     );
   }
 }
+
 // == Export
 export default Login;
