@@ -1,6 +1,6 @@
 .reviews{
 
-  background-color: #06264e8a;
+  background:linear-gradient(115deg, #06264e8a,#3a8df18a);
 
   &-cardDeck{
     width: 70%;
@@ -8,6 +8,7 @@
     color:black;
     white-space: nowrap; 
     padding: 1em;
+    
 
   }
 
@@ -27,4 +28,10 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+.cardborder{
+  -moz-box-shadow: 3px -5px 29px #2c2680;
+  -webkit-box-shadow: 3px -5px 29px #2c2680;
+    box-shadow: 3px -5px 29px #2c2680;
 }

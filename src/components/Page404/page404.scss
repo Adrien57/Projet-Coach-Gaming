@@ -1,0 +1,42 @@
+.page404{
+  background-color:#E7E7E5;
+  display:flex;
+  flex-direction: column;
+  &__image{
+    width: 60%;
+    margin: 0 auto;
+  }
+  &__title{
+    width: 50%;
+    margin: 1em auto;
+    padding-top:2em;
+  }
+  &__button{
+    width: 10%;
+    text-align: center;
+    margin: 0 auto;
+    
+  }
+}
+
+@media (max-width: 576px){
+  .page404{
+    background-color:#E7E7E5;
+    display:flex;
+    &__image{
+      width: 60%;
+      margin: 0 auto;
+    }
+    &__title{
+      width: 100%;
+      margin: 1em auto;
+      padding-top:2em;
+    }
+    &__button{
+      width:100%;
+      text-align: center;
+      margin: 0 auto;
+      
+    }
+  }
+}

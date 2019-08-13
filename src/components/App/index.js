@@ -18,6 +18,7 @@ import Game from 'src/containers/Game';
 import CoachDetail from 'src/containers/CoachDetail';
 import SignUp from '../SignUp';
 import WhoAreWe from '../WhoAreWe';
+import Page404 from '../Page404';
 
 const App = ({ loading }) => (
 
@@ -37,6 +38,7 @@ const App = ({ loading }) => (
           <Route path="/auth/login" exact component={Login} />
           <Route path="/auth/signup" exact component={SignUp} />
           <Route path="/qui-sommes-nous" exact component={WhoAreWe} />
+          <Route component={Page404} />
         </Switch>
         <Footer />
       </>

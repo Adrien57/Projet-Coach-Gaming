@@ -83,12 +83,16 @@ class Login extends React.Component {
             )}
             
               <Nav className="justify-content-center form-links" variant="pills" defaultActiveKey="/home">
-              <NavLink to="login">
+              <NavLink to="login"
+              activeClassName="active"
+              >
                Connexion
               </NavLink>
               <span>/</span>
               <Nav.Item>
-                <NavLink to="signup">
+                <NavLink to="signup"
+                activeClassName="active"
+                >
                   Inscription
                 </NavLink>
               </Nav.Item>
