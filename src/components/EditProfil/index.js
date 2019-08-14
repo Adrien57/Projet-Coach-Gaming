@@ -123,7 +123,7 @@ class EditProfil extends React.Component {
     return (
       <Container>
       <Row className="margin-row form" style={{ marginTop: 50 }}>
-      <Nav className="form-nav" variant="pills" defaultActiveKey="/home">
+      <Nav className="form-nav" variant="pills">
           <NavLink to="/account">
                Profil
           </NavLink>
@@ -132,6 +132,12 @@ class EditProfil extends React.Component {
           <Nav.Item>
               <NavLink to="/account/edit">
                   Modifier
+              </NavLink>
+          </Nav.Item>
+          <span>/</span>
+          <Nav.Item>
+              <NavLink to="/account/mailbox">
+                  Messagerie
               </NavLink>
           </Nav.Item>
         </Nav>

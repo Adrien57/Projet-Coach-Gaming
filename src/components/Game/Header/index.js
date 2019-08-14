@@ -29,7 +29,7 @@ const Header = (props) => {
 
       <Card className="bg-dark text-white header-bg">
         <div
-          className="gamesList"
+          className="gamesList header-game"
           style={{
             backgroundImage: `url(${image})`,
           }}

@@ -34,7 +34,7 @@ const Informations = () => (
         </Col>
       </Row>
       <NavLink to={'/auth/signup'}>
-        <Button size="lg" className="informations__information__button">Créer mon compte</Button>
+        <Button size="lg" className="form-button">Créer mon compte</Button>
       </NavLink>
     </Col>
   </Row>

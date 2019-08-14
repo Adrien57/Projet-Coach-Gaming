@@ -119,7 +119,7 @@ class Login extends React.Component {
               {error === true && 
               (
               <p>
-              <Alert variant="danger">Un ou plusieurs champs comporte des erreurs</Alert>
+              <Alert variant="danger" className="alert">Un ou plusieurs champs comporte des erreurs</Alert>
               </p>
               )
               }

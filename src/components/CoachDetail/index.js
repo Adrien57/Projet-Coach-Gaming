@@ -35,7 +35,7 @@ class CoachDetail extends React.Component {
         const coachDetailFromApi = response.data;
         console.log(this.props.match.params);
         this.saveCoachDetail(coachDetailFromApi);
-        console.log(this.state);
+        console.log(this.state.coachDetail.user.id);
         
       })
       .catch((error) => {

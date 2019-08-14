@@ -22,7 +22,7 @@ class HomeUser extends React.Component {
   componentDidMount() {
     if (sessionStorage.getItem('userData')) {
       // on recoit bien le token 
-      
+
       this.getUserData();
     }
     else {
@@ -64,6 +64,10 @@ class HomeUser extends React.Component {
     sessionStorage.clear();
     // store.dispatch(changeLogged(false));
     window.location.reload();
+    return(
+      <Redirect to={'/auth/login'} />
+    );
+    
   }
 
 
@@ -77,7 +81,7 @@ class HomeUser extends React.Component {
     
     return (
       <Container>
-        <Nav className="form-nav" variant="pills" defaultActiveKey="/home">
+        <Nav className="form-nav" variant="pills">
           <NavLink to="/account">
                Profil
           </NavLink>
@@ -86,6 +90,12 @@ class HomeUser extends React.Component {
           <Nav.Item>
               <NavLink to="/account/edit">
                   Modifier
+              </NavLink>
+          </Nav.Item>
+          <span>/</span>
+          <Nav.Item>
+              <NavLink to="/account/mailbox">
+                  Messagerie
               </NavLink>
           </Nav.Item>
         </Nav>
