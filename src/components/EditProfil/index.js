@@ -96,6 +96,15 @@ class EditProfil extends React.Component {
       });
   }
 
+  logout() {
+    sessionStorage.setItem('userData', '');
+    sessionStorage.clear();
+    // store.dispatch(changeLogged(false));
+    <Redirect to={'/auth/login'} />
+    window.location.reload();
+  }
+
+
   changeHandler = e => {
     this.setState({ [e.target.name]: e.target.value });
   }
@@ -122,27 +131,31 @@ class EditProfil extends React.Component {
     }
     return (
       <Container>
-      <Row className="margin-row form" style={{ marginTop: 50 }}>
-      <Nav className="form-nav" variant="pills">
-          <NavLink to="/account">
+
+<Row className="margin-row profil">
+        <Col lg={12}>
+        <Button onClick={this.logout}>Déconnexion</Button>
+        <h1 className="profil-title">Bonjour ! <strong>{name}</strong></h1>
+        <Nav className="justify-content-center form-nav" variant="pills">
+          <NavLink to="/account" className="profil-link">
                Profil
           </NavLink>
-              
             <span>/</span>
           <Nav.Item>
-              <NavLink to="/account/edit">
+              <NavLink to="/account/edit" className="profil-link">
                   Modifier
               </NavLink>
           </Nav.Item>
           <span>/</span>
           <Nav.Item>
-              <NavLink to="/account/mailbox">
+              <NavLink to="/account/mailbox" className="profil-link">
                   Messagerie
               </NavLink>
           </Nav.Item>
         </Nav>
-        <Col lg={12}>
-        <h1>Modification</h1>
+        <Row className="margin-row" >
+          <Col lg={12}>
+          <h1>Modification</h1>
 
           <Form onSubmit={this.submitHandler}>
             <Form.Row>
@@ -175,16 +188,18 @@ class EditProfil extends React.Component {
 
             <Form.Group as={Col} md="12" sm="12">
               <Form.Control type="password" placeholder="Mot de passe" value={password} onChange={this.changeHandler} name="password" ref="password" className="form-input" />
-
             </Form.Group>
 
             </Form.Row>
             <div className="button-center">
+
             <Button variant="primary" type="submit" className="form-button">
             Valider
             </Button>
             </div>
           </Form>
+          </Col>
+        </Row>
         </Col>
       </Row>
       </Container>

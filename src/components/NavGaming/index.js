@@ -5,13 +5,28 @@ import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import './nav.scss';
+class NavGaming extends React.Component{
+  state = {
+    logged: false,
+  }
 
-const NavGaming = ({ categories ,categoriesLogged, games }) => (
-  <Navbar expand="lg" className="navbar">
+  componentDidMount(){
+    if(sessionStorage.getItem('userData')){
+      this.setState({
+        logged: true,
+      })
+    }
+  }
+
+  render(){
+    const { categories ,categoriesLogged, games } = this.props;
+    return(
+
+      <Navbar expand="lg" className="navbar">
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="mr-auto navbar-ul">
-        {sessionStorage.getItem('userData') === null && (
+        {this.state.logged === false && (
           categories.map(({ route, label }) => {
             if (label === 'Jeux') {
               return (
@@ -43,7 +58,7 @@ const NavGaming = ({ categories ,categoriesLogged, games }) => (
             }
           })
         )}
-        {sessionStorage.getItem('userData') && (
+        {this.state.logged === true && (
           categoriesLogged.map(({ route, label }) => {
             if (label === 'Jeux') {
               return (
@@ -78,6 +93,8 @@ const NavGaming = ({ categories ,categoriesLogged, games }) => (
       </Nav>
     </Navbar.Collapse>
   </Navbar>
-);
+    )
+  }
+};
 
 export default NavGaming;
