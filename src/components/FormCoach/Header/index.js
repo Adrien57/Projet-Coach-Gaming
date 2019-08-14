@@ -59,7 +59,7 @@ class Header extends React.Component {
           </Form.Group>
     
           <Form.Group as={Col} controlId="formGridZip">
-            <Form.Label className="form-label">Ta plateforme</Form.Label>
+            <Form.Label className="form-label">Plateforme</Form.Label>
             <Form.Control as="select">
               <option>Xbox One</option>
               <option>Playstation 4</option>
