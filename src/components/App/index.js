@@ -1,7 +1,6 @@
 // == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container } from 'react-bootstrap';
 import { Switch, Route } from 'react-router-dom';
 
 
@@ -9,7 +8,6 @@ import { Switch, Route } from 'react-router-dom';
 import './app.scss';
 import Nav from 'src/containers/NavGaming';
 import Footer from 'src/components/Footer';
-
 import Home from 'src/components/Home';
 import HomeUser from 'src/containers/HomeUser';
 import EditProfil from 'src/components/EditProfil';

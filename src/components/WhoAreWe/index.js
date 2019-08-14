@@ -37,7 +37,8 @@ const WhoAreWe = () => (
   <Col lg={12} xs={12} className="no-padding">
   <Jumbotron className="rules">
       <Row className="rules-center-element">
-      <Col lg={6} xs={12}><div className="img-center">
+      <Col lg={6} xs={12}>
+      <div className="img-center">
         <Image className="rules__image" src="https://image.freepik.com/photos-gratuite/jeune-femme-jouant-controleur-jeu-video-pouce-leve-parce-qu-il-s-est-passe-quelque-chose-bien_1368-42320.jpg"></Image>
       </div>
         
@@ -46,8 +47,6 @@ const WhoAreWe = () => (
       <h1 className="rules__title">Les règles du jeu</h1>
       <p className="rules__description">
       Tous nos coachs sont sensibilisés pour éduquer les eleves aux bonnes pratiques, comme notamment les conditions idéales pour jouer, le contrôle du temps passé, ou les limites à se fixer. N’hésites pas à échanger avec tes enfants pour les accompagner dans un usage responsable des jeux vidéo à la maison, mieux encore partage une partie avec eux !<br/>
-
-
       </p>
       </Col>
       </Row>

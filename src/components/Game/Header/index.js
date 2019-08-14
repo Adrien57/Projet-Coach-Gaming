@@ -35,7 +35,7 @@ const Header = (props) => {
           }}
         >
         <Card.ImgOverlay className="background-overlay">
-          <Card.Title><h1>{name}</h1></Card.Title>
+          <Card.Title className="title"><h1>{name}</h1></Card.Title>
           <Card.Text>
           {description}
           </Card.Text>
