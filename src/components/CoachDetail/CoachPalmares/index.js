@@ -1,43 +1,41 @@
 // == Import : npm
 import React from 'react';
-import { Row, Col } from 'react-bootstrap';
-import { FaTrophy } from 'react-icons/fa';
+import { Row, Col, Figure } from 'react-bootstrap';
 
 // == Import : local
 import './coachPalmares.scss';
 
 // == Composant
 
-class CoachPalmares extends React.Component {
+const CoachPalmares = ({ palmares }) => {
+console.log(palmares.user.records);
+  return (
+    <Row className="details-row palmares">
+      <Col xs={12} md={12}>
+        <h2> Palmarès </h2>
+        <Row>
+        {palmares.user.records.map((palm) =>{
+          return (
+            <Col lg={6} xs={12}>
+            <Figure>
+              <Figure.Image
+                width={171}
+                height={180}
+                alt="171x180"
+                src={palm.logo.url}
+                roundedCircle
+              />
+            </Figure>
+            <p>{palm.description}</p>
+          </Col>
+          );
+        })}
 
-  componentDidMount() {
-
-  }
-
-  render() {
-    return (
-      <Row className="details-row palmares">
-        <Col xs={12} md={12}>
-          <h2> Palmarès </h2>
-          <Row>
-            <Col lg={4}>
-              <FaTrophy size="2em" />
-              <p>Cup1</p>
-            </Col>
-            <Col lg={4}>
-              <FaTrophy size="2em" />
-              <p>Cup1</p>
-            </Col>
-            <Col md={4}>
-              <FaTrophy size="2em" />
-              <p>Cup1</p>
-            </Col>
-          </Row>
-        </Col>
-      </Row>
-    );
-  }
+        </Row>
+      </Col>
+    </Row>
+  );
 }
-
+   
 // == Export
 export default CoachPalmares;

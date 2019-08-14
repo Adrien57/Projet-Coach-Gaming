@@ -9,7 +9,7 @@ const WhoAreWe = () => (
   <Jumbotron className="banniere">
     <h1 className="banniere__title">Mais c'est quoi ce truc ?</h1>
     <p className="banniere__description">Coach-gaming est une plateforme de coaching dédiée aux fans de jeux vidéos dans le but de débloquer la progression des joueurs de tous niveaux.
-      Pour être référencés sur la plateforme GamerCoach, tous nos coachs ont été évalués en amont par nos sélectionneurs sur des critères très stricts tels que leurs compétences techniques, leurs aptitudes pédagogiques ou leurs capacités à partager leur expertise.
+      Pour être référencés sur la plateforme CoachGaming, tous nos coachs ont été évalués en amont par nos sélectionneurs sur des critères très stricts tels que leurs compétences techniques, leurs aptitudes pédagogiques ou leurs capacités à partager leur expertise.
     </p>
   </Jumbotron>
   </Col>

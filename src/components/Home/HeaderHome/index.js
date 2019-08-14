@@ -26,7 +26,7 @@ class HeaderHome extends React.Component {
               <Card.Text className="gamesList__header__description">Le numero 1 des sites de Coachs E-sport qui n'attendent que toi ! </Card.Text>
             </Card.ImgOverlay>
           </div>
-          <Nav className="justify-content-center gamesList-nav" activeKey="/home">
+          <Nav className="justify-content-center gamesList-nav stroke" activeKey="/home">
             
             <NavLink
               exact

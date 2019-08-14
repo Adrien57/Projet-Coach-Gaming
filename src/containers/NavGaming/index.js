@@ -21,8 +21,6 @@ const mapStateToProps = (state, ownProps) => ({
   games: state.games,
   categories: categoriesData,
   categoriesLogged: categoriesDataLogged,
-  logged: state.logged,
-  
 });
 
 /* === Actions ===

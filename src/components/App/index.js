@@ -10,6 +10,8 @@ import Nav from 'src/containers/NavGaming';
 import Footer from 'src/components/Footer';
 import Home from 'src/components/Home';
 import HomeUser from 'src/containers/HomeUser';
+import EditProfil from 'src/components/EditProfil';
+import Mailbox from 'src/components/Mailbox';
 import FormCoach from 'src/components/FormCoach';
 import Login from 'src/components/Login';
 import Game from 'src/containers/Game';
@@ -30,6 +32,8 @@ const App = ({ loading }) => (
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/account" exact component={HomeUser} />
+          <Route path="/account/edit" exact component={EditProfil} />
+          <Route path="/account/mailbox" exact component={Mailbox} />
           <Route path="/jeux/:slug/coachs" exact component={Game} />
           <Route path="/devenir-coach" exact component={FormCoach} />
           <Route path="/jeux/:slug/coachs/:slugcoach" exact component={CoachDetail} />
