@@ -8,7 +8,7 @@
   
 
 }
-.jumbotron{
+.become{
   background-image: url('https://png.pngtree.com/thumb_back/fh260/back_pic/00/02/47/515617c340a55f2.jpg');
   background-repeat: repeat;
   background-size: contain;
@@ -16,13 +16,13 @@
   &-title{
     font-size:2.9em;
     text-align: center;
-    color:rgb(43, 72, 126);
+    color:white;
     margin-left:1.5em;
   }
   &-description{
     font-size:1.5em;
     text-align: center;
-    color:rgb(43, 72, 126);
-    padding-bottom:1em;
+    color:white;
+    padding:1em 0;
   }
 }

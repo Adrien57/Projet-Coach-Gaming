@@ -13,14 +13,14 @@ class Header extends React.Component {
     return (
 
       <>
-      <Jumbotron className="jumbotron">
+      <Jumbotron className="become">
        
         
      
     </Jumbotron>
         <div>
-          <h1 className="jumbotron-title">Tu veux devenir Coach ?</h1>
-        <p className="jumbotron-description">
+          <h1 className="become-title">Tu veux devenir Coach ?</h1>
+        <p className="become-description">
         Être un coach certifié te permet d’être référencé sur notre plateforme. Ton profil est proposé aux joueurs ayant des besoins d'apprentissage.Alors remplis vite ta candidature ci-dessous!
         </p>
         </div>

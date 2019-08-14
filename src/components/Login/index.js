@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { Form, Button, Row, Col, Nav, Alert, Container } from 'react-bootstrap';
 import { NavLink, Redirect } from 'react-router-dom';
 import store from 'src/store';
-import { changeLogged } from 'src/store/reducer';
 // == Import : local
 import './login.scss';
 import axios from 'axios';
@@ -46,8 +45,6 @@ class Login extends React.Component {
           console.log(responseJSON);
           if (responseJSON.data) {
             sessionStorage.setItem('userData', JSON.stringify(responseJSON));
-            //fonction qui modifie la propiété "logged" de l'initial state en true;
-            store.dispatch(changeLogged());
             this.setState({
               redirect: true,
               data: responseJSON.data,
