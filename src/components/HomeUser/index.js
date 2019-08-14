@@ -1,8 +1,9 @@
 // == Import : npm
 import React from 'react';
 import { Redirect, NavLink } from 'react-router-dom';
-import { Row, Col, Button, Nav, Container } from 'react-bootstrap';
+import { Row, Col, Button, Nav, Container, Card } from 'react-bootstrap';
 import axios from 'axios';
+import { IoMdReturnLeft } from "react-icons/io";
 
 // == Import : local
 import './homeuser.scss';
@@ -18,7 +19,6 @@ class HomeUser extends React.Component {
     this.logout = this.logout.bind(this);
   }
 
-  
   componentDidMount() {
     if (sessionStorage.getItem('userData')) {
       // on recoit bien le token 
@@ -41,10 +41,10 @@ class HomeUser extends React.Component {
       method: 'get',
       url: `http://92.243.9.86/projet-CoachsGaming-back/coach-gaming/public/api/profil/${slug}`,
       headers: {
-          'Authorization' : `Bearer ${token}`,
-         'Content-Type': 'application/json',
-         'Accept' : 'application/json',
-         },
+        'Authorization' : `Bearer ${token}`,
+        'Content-Type': 'application/json',
+        'Accept' : 'application/json',
+      },
 
     })
       .then((response) => {
@@ -63,11 +63,8 @@ class HomeUser extends React.Component {
     sessionStorage.setItem('userData', '');
     sessionStorage.clear();
     // store.dispatch(changeLogged(false));
+    <Redirect to={'/auth/login'} />
     window.location.reload();
-    return(
-      <Redirect to={'/auth/login'} />
-    );
-    
   }
 
 
@@ -78,110 +75,93 @@ class HomeUser extends React.Component {
       return (<Redirect to={'/auth/login'} />
       );
     }
-    
     return (
       <Container>
-        <Nav className="form-nav" variant="pills">
-          <NavLink to="/account">
+      <Row className="margin-row profil">
+        <Col lg={12}>
+        <Button onClick={this.logout} variant="outline-danger"><IoMdReturnLeft /> Déconnexion</Button>
+        <h1 className="profil-title">Bonjour ! <strong>{data.name}</strong></h1>
+        <Nav className="justify-content-center" variant="pills">
+          <NavLink to="/account" className="profil-link" >
                Profil
           </NavLink>
-              
             <span>/</span>
           <Nav.Item>
-              <NavLink to="/account/edit">
+              <NavLink to="/account/edit" className="profil-link">
                   Modifier
               </NavLink>
           </Nav.Item>
           <span>/</span>
           <Nav.Item>
-              <NavLink to="/account/mailbox">
+              <NavLink to="/account/mailbox" className="profil-link">
                   Messagerie
               </NavLink>
           </Nav.Item>
         </Nav>
-      <Row>
-
-        <Col>
-          <div className="container">
-            <div className="row">
-              <div className="col-12">
-                <div className="card">
-                  <div className="card-body">
-                    <div className="card-title mb-4">
-                      <div className="d-flex justify-content-start">
-                        <div className="userData ml-3">
-                          <h2 className="d-block title"> Profil de  {data.name}</h2>
-                          <Button className="logout" onClick={this.logout} variant="outline-danger">Se déconnecter</Button>
-                        </div>
-                        <div className="ml-auto">
-                          <input type="button" className="btn btn-primary d-none" id="btnDiscard" value="Discard Changes" />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-12">
-                        <ul className="nav nav-tabs mb-4" id="myTab" role="tablist">
-                          <li className="nav-item">
-                            <a className="nav-link active" id="basicInfo-tab" data-toggle="tab" href="#basicInfo" role="tab" aria-controls="basicInfo" aria-selected="true">Infos Profil</a>
-                          </li>
-                        </ul>
-                        <div className="tab-content ml-1" id="myTabContent">
-                          <div className="tab-pane fade show active" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
-                            <div className="row">
-                              <div className="col-sm-3 col-md-2 col-5">
-                                <label>Pseudo</label>
-                              </div>
-                              <div className="col-md-8 col-6">
-                                {data.username}
-                              </div>
-                            </div>
-                            <hr />
-
-                            <div className="row">
-                              <div className="col-sm-3 col-md-2 col-5">
-                                <label>Prenom</label>
-                              </div>
-                              <div className="col-md-8 col-6">
-                                {data.name}
-                              </div>
-                            </div>
-                            <hr />         
-                            <div className="row">
-                              <div className="col-sm-3 col-md-2 col-5">
-                                <label>Nom</label>
-                              </div>
-                              <div className="col-md-8 col-6">
-                                {data.lastname}
-                              </div>
-                            </div>
-                            <hr />
-                            <div className="row">
-                              <div className="col-sm-3 col-md-2 col-5">
-                                <label>Age</label>
-                              </div>
-                              <div className="col-md-8 col-6">
-                                {data.age}
-                              </div>
-                            </div>
-                            <hr />
-                            <div className="row">
-                              <div className="col-sm-3 col-md-2 col-5">
-                                <label>Email</label>
-                              </div>
-                              <div className="col-md-8 col-6">
-                                {data.email}
-                              </div>
-                            </div>
-                            <hr />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <Row className="margin-row">
+          <Col lg={12}>
+          <Card >
+            <Card.Body>
+              <Card.Title className="profil-card-title">Mes Informations</Card.Title>
+              <Card.Text>
+                <Row>
+                  <Col lg={6} xs={6} md={6}>
+                    <label>Pseudo</label>
+                  </Col>
+                  <Col lg={6} xs={6} md={6}>
+                  {data.username}
+                  </Col>
+                </Row>
+                <hr></hr>
+              </Card.Text>
+              <Card.Text>
+                <Row>
+                  <Col lg={6} xs={6} md={6}>
+                    <label>Nom</label>
+                  </Col>
+                  <Col lg={6} xs={6} md={6}>
+                  {data.lastname}
+                  </Col>
+                </Row>
+                <hr></hr>
+              </Card.Text>
+              <Card.Text>
+              <Row>
+                  <Col lg={6} xs={6} md={6}>
+                    <label>Prenom</label>
+                  </Col>
+                  <Col lg={6} xs={6} md={6}>
+                  {data.name}
+                  </Col>
+              </Row>
+              <hr></hr>
+              </Card.Text>
+              <Card.Text>
+              <Row>
+                  <Col lg={6} xs={6} md={6}>
+                    <label>Age</label>
+                  </Col>
+                  <Col lg={6} xs={6} md={6}>
+                  {data.age}
+                  </Col>
+                </Row>
+                <hr></hr>
+              </Card.Text>
+              <Card.Text>
+              <Row>
+                  <Col lg={6} xs={6} md={6}>
+                    <label>Email</label>
+                  </Col>
+                  <Col lg={6} xs={6} md={6}>
+                  {data.email}
+                  </Col>
+                </Row>
+                <hr></hr>
+              </Card.Text>
+            </Card.Body>
+          </Card>
+          </Col>
+        </Row>
         </Col>
       </Row>
       </Container>

@@ -3,7 +3,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Form, Button, Row, Col, Nav, Alert, Container } from 'react-bootstrap';
 import { NavLink, Redirect } from 'react-router-dom';
-import store from 'src/store';
+
+
 // == Import : local
 import './login.scss';
 import axios from 'axios';
@@ -21,6 +22,7 @@ class Login extends React.Component {
   changeHandler = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   }
+
 
   submitHandler = e => {
     e.preventDefault();

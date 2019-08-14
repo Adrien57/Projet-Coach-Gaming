@@ -16,8 +16,7 @@ class Mailbox extends React.Component {
     this.state = {
       id:'',
       redirect: false,
-      coachId: '',
-      userID: '',
+      name: '',
     }
   }
 
@@ -32,6 +31,15 @@ class Mailbox extends React.Component {
       });
     }
   }
+
+  logout() {
+    sessionStorage.setItem('userData', '');
+    sessionStorage.clear();
+    // store.dispatch(changeLogged(false));
+    <Redirect to={'/auth/login'} />
+    window.location.reload();
+  }
+
 
 
   getUserData() {
@@ -51,13 +59,7 @@ class Mailbox extends React.Component {
     })
       .then((response) => {
         this.setState({
-          id: response.data.id,
           name: response.data.name,
-          lastname: response.data.lastname,
-          username: response.data.username,
-          age: response.data.age,
-          password: response.data.password,
-          email: response.data.email,
         }, () => {
           console.log(this.state);
         })
@@ -69,58 +71,49 @@ class Mailbox extends React.Component {
   }
 
 
-
-  submitHandler = e => {
-    e.preventDefault();
-    const userData = {
-      name: this.state.name,
-      lastname: this.state.lastname,
-      username: this.state.username,
-      email: this.state.email,
-      age: this.state.age,
-      password: this.state.password,
-    };
-    this.editUserData(userData);
-  };
-
-
   render() {
-    const { redirect } = this.state;
+    const { redirect, name } = this.state;
     if (redirect) {
       return (<Redirect to={'/auth/login'} />
       );
     }
     return (
       <Container>
-      <Row className="margin-row form" style={{ marginTop: 50 }}>
-      <Nav className="form-nav" variant="pills" >
-          <NavLink to="/account">
+      <Row className="margin-row profil">
+        <Col lg={12}>
+        <Button onClick={this.logout}>Déconnexion</Button>
+        <h1 className="profil-title">Bonjour ! <strong>{name}</strong></h1>
+        <Nav className="justify-content-center form-nav" variant="pills">
+          <NavLink to="/account" className="profil-link">
                Profil
           </NavLink>
-              
             <span>/</span>
           <Nav.Item>
-              <NavLink to="/account/edit">
+              <NavLink to="/account/edit" className="profil-link">
                   Modifier
               </NavLink>
           </Nav.Item>
           <span>/</span>
           <Nav.Item>
-              <NavLink to="/account/mailbox">
+              <NavLink to="/account/mailbox" className="profil-link">
                   Messagerie
               </NavLink>
           </Nav.Item>
         </Nav>
-        <Col lg={12}>
-        <h1>Votre messagerie</h1>
-        <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
-          <Tab eventKey="home" title=<MdEmail size="1.5em"/>>
-          <p>Message</p>
-          </Tab>
-          <Tab eventKey="profile" title= <MdCreate size="1.5em"/>>
-            
-          </Tab>
-        </Tabs>
+        <Row className="margin-row">
+          <Col lg={12}>
+          <Col lg={12}>
+            <h1>Votre messagerie</h1>
+            <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
+              <Tab eventKey="home" title=<MdEmail size="1.5em"/>>
+              <p>Message</p>
+              </Tab>
+              <Tab eventKey="profile" title= <MdCreate size="1.5em"/>>
+              </Tab>
+            </Tabs>
+            </Col>
+          </Col>
+        </Row>
         </Col>
       </Row>
       </Container>

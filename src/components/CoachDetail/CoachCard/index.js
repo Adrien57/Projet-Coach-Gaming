@@ -1,19 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Nav, Button, Figure, Row, Col, Jumbotron } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 import { FaTwitch, FaYoutube, FaFacebookF, FaInstagram } from 'react-icons/fa';
 
 
 import './coachCard.scss';
 
 class CoachCard extends React.Component {
+  state = {
+    redirect: false,
+  }
 
   componentDidMount() {
-
+    if (!sessionStorage.getItem('userData')) {
+      this.setState({
+        redirect: true,
+      })
+    }
   }
 
   render() {
     const { coachDetail } = this.props;
+    const { redirect } = this.state;
     return (
       <Col lg={12} sm={12} >
       <Jumbotron className="detail">
@@ -74,11 +83,22 @@ class CoachCard extends React.Component {
           </p>
           <p>
           
+            {redirect === true && (
+              <NavLink to={'/auth/login'}>
                 <Button variant="primary" className="detail-button">Contacter</Button>
-              </p>
-            </Col>
-          </Row>
-        </Jumbotron>
+              </NavLink>
+            )}
+            {
+            redirect === false && (
+              <NavLink to={'/account/mailbox'}>
+                <Button variant="primary" className="detail-button">Contacter</Button>
+              </NavLink>
+            )
+            }
+          </p>
+          </Col>
+        </Row>
+      </Jumbotron>
       </Col>
     );
   }

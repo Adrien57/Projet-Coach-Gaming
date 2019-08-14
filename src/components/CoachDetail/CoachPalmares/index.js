@@ -19,7 +19,7 @@ console.log(palmares.user.records);
             <Col lg={6} xs={12}>
             <Figure>
               <Figure.Image
-                width={171}
+                width={170}
                 height={180}
                 alt="171x180"
                 src={palm.logo.url}
